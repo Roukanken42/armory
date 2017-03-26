@@ -1,3 +1,10 @@
 {% load static %}
 
-<img src="{% static icon %}">
+<img src="{% static itemdata.icon %}"> <br>
+
+{% autoescape off %}
+
+[{{ itemdata.id }}] {{ itemdata.name }} <br>
+{{ itemdata.tooltip }} 
+
+{% endautoescape %}

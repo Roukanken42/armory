@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
+from item.models import ItemData
 
 import json
 import os.path
@@ -14,16 +15,15 @@ def item(request, id):
     content = json.loads(open(filepath).read())
 
     #replace with DB call
-    itemdata = json.loads(open("itemdata.json", "rb").read().decode())
 
-    content.update(itemdata[str(content["item"])])
-
-    # some prettyfying which will go to parser probably
-
-    content["icon"] = "icons/" + content["icon"].replace(".", "/") + ".jpg"
-
-    # result = json.dumps(content, indent=4, sort_keys=True)
+    item_id = content["item"]
+    itemdata = ItemData.objects.get(id = item_id)
 
 
     template = loader.get_template("item/tooltip.html")
-    return HttpResponse(template.render(content))
+    return HttpResponse(
+        template.render({
+            "itemdata": itemdata,
+            "content" : content
+        })
+    )
