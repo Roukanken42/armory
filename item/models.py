@@ -4,7 +4,7 @@ from django.db import models
 class ItemData(models.Model):                   # comments for parsing purposes
     type = models.IntegerField()                # id
     name = models.CharField(max_length=200)     # string
-    tooltip = models.CharField(max_length=500)  # toolTip
+    tooltip = models.CharField(max_length=1000)  # toolTip
     icon = models.CharField(max_length=200)     
     
     tradable = models.BooleanField()
@@ -15,7 +15,7 @@ class ItemData(models.Model):                   # comments for parsing purposes
 
     boundType = models.CharField(max_length=20)
     category = models.CharField(max_length=20)
-    combatItemType = models.CharField(max_length=20)
+    combatItemType = models.CharField(max_length=40)
     requiredEquipmentType = models.CharField(max_length=20)
 
     level = models.IntegerField()
