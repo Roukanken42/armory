@@ -1,10 +1,56 @@
 {% load static %}
 
-<img src="{% static itemdata.icon %}"> <br>
+<style>
+.item_box 	{
+		color:white; 
+		background-color:#051423;
+		padding:10px 10px 10px 10px;
+		font-family: verdana;
+		border-style: solid;
+		border-width: 3px;
+		border-color: blue
+	}
+.rarity_color {
+	{% if itemdata.rareGrade == 1 %}
+		color:green;
+	{% elif itemdata.rareGrade == 2%}
+		color:blue;
+	{% elif itemdata.rareGrade == 3%}
+		color:yellow;
+	{% else %}
+		color:white;
+	{% endif %}
+	}
 
-{% autoescape off %}
+</style>
 
-[{{ itemdata.id }}] {{ itemdata.name }} <br>
-{{ itemdata.tooltip }} 
+<div id="item" class = "item_box" style="width:400px;" >
+	<font size = 4 class = "rarity_color"> {{ itemdata.name }} </font>
+	<br>
 
-{% endautoescape %}
+	<img src="{% static itemdata.icon %}" align="left" style = "padding-right:10px">
+<!--	 -->
+ID[{{ itemdata.id }}]<br>
+	{% autoescape off %}
+	<font size = 2>
+		{{ itemdata.tooltip }}
+	{% endautoescape %}
+	<br><br>
+	<font style = "color:red">
+
+	{% if not itemdata.tradeable %}
+		Cannot trade.
+	{% endif %}
+	{% if not itemdata.warehouseStorable %}
+		Cannot be stored in bank.
+	{% endif %}		
+	{% if not itemdata.guildWarehouseStorable %}
+		This item can't be stored in the guild bank.
+	{% endif %}		
+	{% if not itemdata.storeSellable %}
+		No sale value.
+	{% endif %}		
+
+	
+	</font>
+</div>
