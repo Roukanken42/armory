@@ -19,6 +19,7 @@ def item(request, id):
     item_id = content["item"]
     itemdata = ItemData.objects.get(id = item_id)
 
+    itemdata.icon = "item/" + itemdata.icon
 
     template = loader.get_template("item/tooltip.html")
     return HttpResponse(
