@@ -62,3 +62,18 @@ class ItemData(models.Model):                   # comments for parsing purposes
     # "dropSound": "InterfaceSound.Drop_ItemCUE.Drop_PotionCue",
     # "coolTime": 30,
     # "coolTimeGroup": 3,
+
+
+class Item(models.Model):
+    type      = models.IntegerField()
+
+    enchant   = models.IntegerField()
+    itemLevel = models.IntegerField()
+    feedstock = models.IntegerField()
+    
+    crystal1  = models.IntegerField()
+    crystal2  = models.IntegerField()
+    crystal3  = models.IntegerField()
+    crystal4  = models.IntegerField()
+
+    # "bonuses": []
