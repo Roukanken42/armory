@@ -1,27 +1,43 @@
 {% load static %}
 
 <style>
-.item_box 	{
+.item_box
+ 	{
 		color:white; 
 		background-color:#051423;
 		padding:10px 10px 10px 10px;
 		font-family: verdana;
 		border-style: solid;
-		border-width: 3px;
-		border-color: blue
-	}
-.rarity_color {
-	{% if itemdata.rareGrade == 1 %}
-		color:green;
-	{% elif itemdata.rareGrade == 2%}
-		color:blue;
-	{% elif itemdata.rareGrade == 3%}
-		color:yellow;
-	{% else %}
-		color:white;
-	{% endif %}
+		border-width: 2px;
+		border-color: #3E7BE8
 	}
 
+.line
+	{
+		border: 0;
+		height: 2px;
+		background-image: -webkit-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+		background-image: -moz-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+		background-image: -ms-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+		background-image: -o-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+		margin-bottom: 15px;
+	}	
+	
+.rarity_color 
+	{
+		{% if itemdata.rareGrade == 1 %}
+			color:#20A91B;	<!--green-->
+		{% elif itemdata.rareGrade == 2%}
+			color:#3E7BE8; <!--blue-->
+		{% elif itemdata.rareGrade == 3%}
+			color:#F5D529; <!--yellow-->
+		{% else %}
+			color:white;
+		{% endif %}
+	}
+
+
+	
 </style>
 
 <div id="item" class = "item_box" style="width:400px;" >
@@ -46,7 +62,7 @@
 				<font size = 2 style = "color:white; line-height: 150%;"> {{ itemdata.tooltip }} </font>
 				{% endautoescape %}
 				<br><br>
-				<font size = 2 style = "color:red; line-height: 150%;">
+				<font size = 2 style = "color:#AC181A; line-height: 150%;">
 					{% if not itemdata.tradeable %}
 						Cannot trade.
 					{% endif %}
@@ -68,7 +84,12 @@
 ID[{{ itemdata.id }}]<br>
 
  -->
-	</table>	
+	<hr class = "line">
+
+	{% for crystal in itemdata.crystals %}
+		<img src="{% static crystal.icon %}" align="left">
+		<font size = 2 style = "color:#3E7BE8; line-height: 180%;"> {{ crystal.name }} <br></font>
+	{% endfor %}	
 
 </div>
 
