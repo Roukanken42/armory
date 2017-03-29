@@ -1,9 +1,9 @@
 {% load static %}
 
 <style>
-.item_box
- 	{
-		color:white; 
+
+.item_box 	{
+		color: #BBBBBB; 
 		background-color:#051423;
 		padding:10px 10px 10px 10px;
 		font-family: verdana;
@@ -26,13 +26,13 @@
 .rarity_color 
 	{
 		{% if itemdata.rareGrade == 1 %}
-			color:#20A91B;	<!--green-->
+			color: #018B04;
 		{% elif itemdata.rareGrade == 2%}
-			color:#3E7BE8; <!--blue-->
+			color: #01A0D7;
 		{% elif itemdata.rareGrade == 3%}
-			color:#F5D529; <!--yellow-->
+			color: #D98F05;
 		{% else %}
-			color:white;
+			color: #BBBBBB;
 		{% endif %}
 	}
 
@@ -47,7 +47,7 @@
 		<tr>
 			<td valign="top">
 				<div style="position: relative; left: 0; top: 0;">
-					<img src="{% static itemdata.icon %}" align="left" style = "position: relative; top: 0; left: 0;">
+					<img src="{% static itemdata.icon %}" align="left" style = "position: relative; top: 0; left: 0;" width="50" height="50">
 					{% if itemdata.rareGrade == 1 %}
 						<img src="{% static "item/icon_grade_1.png" %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
 					{% elif itemdata.rareGrade == 2%}
@@ -59,10 +59,10 @@
 			</td>
 			<td>
 				{% autoescape off %}
-				<font size = 2 style = "color:white; line-height: 150%;"> {{ itemdata.tooltip }} </font>
+				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ itemdata.tooltip }} </font>
 				{% endautoescape %}
 				<br><br>
-				<font size = 2 style = "color:#AC181A; line-height: 150%;">
+				<font size = 2 style = "color: #AB181A; line-height: 150%;">
 					{% if not itemdata.tradeable %}
 						Cannot trade.
 					{% endif %}
