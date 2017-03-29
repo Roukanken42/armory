@@ -2,23 +2,23 @@
 
 <style>
 .item_box 	{
-		color:white; 
+		color: #BBBBBB; 
 		background-color:#051423;
 		padding:10px 10px 10px 10px;
 		font-family: verdana;
 		border-style: solid;
 		border-width: 3px;
-		border-color: blue
+		border-color: #3579A1
 	}
 .rarity_color {
 	{% if itemdata.rareGrade == 1 %}
-		color:green;
+		color: #018B04;
 	{% elif itemdata.rareGrade == 2%}
-		color:blue;
+		color: #01A0D7;
 	{% elif itemdata.rareGrade == 3%}
-		color:yellow;
+		color: #D98F05;
 	{% else %}
-		color:white;
+		color: #BBBBBB;
 	{% endif %}
 	}
 
@@ -43,10 +43,10 @@
 			</td>
 			<td>
 				{% autoescape off %}
-				<font size = 2 style = "color:white; line-height: 150%;"> {{ itemdata.tooltip }} </font>
+				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ itemdata.tooltip }} </font>
 				{% endautoescape %}
 				<br><br>
-				<font size = 2 style = "color:red; line-height: 150%;">
+				<font size = 2 style = "color: #AB181A; line-height: 150%;">
 					{% if not itemdata.tradeable %}
 						Cannot trade.
 					{% endif %}
