@@ -21,7 +21,7 @@ class ItemData(models.Model):                   # comments for parsing purposes
     rank = models.IntegerField(null=True)
     rarity = models.IntegerField(null=True)          #rareGrade
 
-    equipmentData = models.ForeignKey(
+    equipdata = models.ForeignKey(
         "EquipmentData",
         models.SET_NULL,
         null = True
