@@ -42,7 +42,6 @@
 
 <div id="item" class = "item_box" style="width:400px;" >
 	<font size = 4 class = "rarity_color"> {{ itemdata.name }} </font>
-	{{ itemdata.equipmentData.attack }}
 
 	<br><br>
 	<table style="width:100%">
@@ -61,9 +60,12 @@
 			</td>
 			<td>
 				{% autoescape off %}
-				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ itemdata.tooltip }} </font>
+				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ itemdata.tooltip }} 
 				{% endautoescape %}
-				<br><br>
+				<br>
+				Attack: {{ itemdata.equipdata.attack }}
+				</font>
+				<br>
 				<font size = 2 style = "color: #AB181A; line-height: 150%;">
 					{% if not itemdata.tradeable %}
 						Cannot trade.
