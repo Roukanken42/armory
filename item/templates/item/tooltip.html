@@ -25,11 +25,11 @@
 	
 .rarity_color 
 	{
-		{% if itemdata.rareGrade == 1 %}
+		{% if itemdata.rarity == 1 %}
 			color: #018B04;
-		{% elif itemdata.rareGrade == 2%}
+		{% elif itemdata.rarity == 2%}
 			color: #01A0D7;
-		{% elif itemdata.rareGrade == 3%}
+		{% elif itemdata.rarity == 3%}
 			color: #D98F05;
 		{% else %}
 			color: #BBBBBB;
@@ -47,14 +47,14 @@
 		<tr>
 			<td valign="top">
 				<div style="position: relative; left: 0; top: 0;">
-					<img src="{% static itemdata.icon %}" align="left" style = "position: relative; top: 0; left: 0;" width="50" height="50">
-					{% if itemdata.rareGrade == 1 %}
-						<img src="{% static "item/icon_grade_1.png" %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
-					{% elif itemdata.rareGrade == 2%}
-						<img src="{% static "item/icon_grade_2.png" %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
-					{% elif itemdata.rareGrade == 3%}
-						<img src="{% static "item/icon_grade_3.png" %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
-					{% endif %}
+					{% with itemdata.rarity|stringformat:"s" as rarity_s%}
+						{% with "item/icon_grade_"|add:rarity_s|add:".png" as corner_img %}
+
+						<img src="{% static itemdata.icon %}" align="left" style = "position: relative; top: 0; left: 0;" width="50" height="50">
+						<img src="{% static corner_img %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
+						
+						{% endwith %}
+					{% endwith %}
 				</div>
 			</td>
 			<td>

@@ -11,8 +11,6 @@ def item(request, id):
     item = Item.objects.get(id = id)
     itemdata = ItemData.objects.get(id = item.type)
 
-    itemdata.icon = "item/" + itemdata.icon
-
     itemdata.enchant = item.enchant
     itemdata.itemLevel = item.itemLevel
     itemdata.feedstock = item.feedstock

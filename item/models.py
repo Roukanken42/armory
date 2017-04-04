@@ -6,21 +6,26 @@ class ItemData(models.Model):                   # comments for parsing purposes
     tooltip = models.CharField(max_length=1000)  # toolTip
     icon = models.CharField(max_length=200)     
     
-    tradable = models.BooleanField()
-    warehouseStorable = models.BooleanField()
-    guildWarehouseStorable = models.BooleanField()
-    storeSellable = models.BooleanField()
-    enchantEnable = models.BooleanField()
+    tradeable = models.BooleanField(default=True)
+    warehouseStorable = models.BooleanField(default=True)
+    guildWarehouseStorable = models.BooleanField(default=True)
+    storeSellable = models.BooleanField(default=True)
+    enchantable = models.BooleanField(default=False)
 
     boundType = models.CharField(max_length=20)
     category = models.CharField(max_length=20)
     combatItemType = models.CharField(max_length=40)
     requiredEquipmentType = models.CharField(max_length=20)
 
-    level = models.IntegerField()
-    rank = models.IntegerField()
-    rareGrade = models.IntegerField()
+    level = models.IntegerField(null=True)
+    rank = models.IntegerField(null=True)
+    rarity = models.IntegerField(null=True)          #rareGrade
 
+    equipmentData = models.ForeignKey(
+        "EquipmentData",
+        models.SET_NULL,
+        null = True
+    )
     # discutable
 
     # "artisanable": false,
@@ -36,7 +41,6 @@ class ItemData(models.Model):                   # comments for parsing purposes
 
     # "linkCrestId": 0,
     # "linkCustomizingId": 0,
-    # "linkEquipmentId": 0,
     # "linkLookInfoId": 0,
     # "linkPetAdultId": 0,
     # "linkPetOrbId": 0,
@@ -63,7 +67,13 @@ class ItemData(models.Model):                   # comments for parsing purposes
     # "coolTime": 30,
     # "coolTimeGroup": 3,
 
-
+class EquipmentData(models.Model):
+    balance      = models.IntegerField(null=True) 
+    crystalslots = models.IntegerField(null=True)       #countOfSlots
+    defence      = models.IntegerField(null=True)       #def
+    impact       = models.IntegerField(null=True) 
+    attack       = models.IntegerField(null=True)       #minAtk / maxAtk
+    
 class Item(models.Model):
     type      = models.IntegerField()
 
