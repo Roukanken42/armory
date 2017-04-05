@@ -26,6 +26,8 @@ class ItemData(models.Model):                   # comments for parsing purposes
         models.SET_NULL,
         null = True
     )
+
+    passivity = models.ManyToManyField("Passivity")
     # discutable
 
     # "artisanable": false,
@@ -86,4 +88,9 @@ class Item(models.Model):
     crystal3  = models.IntegerField()
     crystal4  = models.IntegerField()
 
-    # "bonuses": []
+    bonuses   = models.ManyToManyField("Passivity")
+
+
+class Passivity(models.Model):
+    name = models.CharField(max_length=200)     # string
+    tooltip = models.CharField(max_length=1000)  # toolTip

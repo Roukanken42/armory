@@ -1,5 +1,20 @@
 [
     {
+        "pk": 103,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 5128
+        }
+    },
+    {
         "pk": 104,
         "model": "item.item",
         "fields": {
@@ -10,20 +25,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
-            "type": 5128
-        }
-    },
-    {
-        "pk": 105,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
+            "bonuses": [],
             "type": 81255
         }
     },
@@ -38,11 +40,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 179580
         }
     },
     {
-        "pk": 115,
+        "pk": 120,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -52,6 +55,10 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                465100,
+                465101
+            ],
             "type": 19703
         }
     },
@@ -66,6 +73,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 170005
         }
     },
@@ -80,6 +88,19 @@
             "crystal4": 0,
             "itemLevel": 407,
             "feedstock": 16777216,
+            "bonuses": [
+                1410020,
+                1410010,
+                1410020,
+                1410000,
+                1410090,
+                1410160,
+                1410161,
+                1410162,
+                1410166,
+                1410167,
+                1410168
+            ],
             "type": 97263
         }
     },
@@ -94,6 +115,10 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                445015,
+                445012
+            ],
             "type": 51003
         }
     },
@@ -108,6 +133,9 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                435000
+            ],
             "type": 51006
         }
     },
@@ -122,6 +150,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 1300
         }
     },
@@ -136,6 +165,9 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                435000
+            ],
             "type": 51001
         }
     },
@@ -150,6 +182,10 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                435019,
+                435000
+            ],
             "type": 51005
         }
     },
@@ -164,6 +200,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 152055
         }
     },
@@ -178,6 +215,7 @@
             "crystal4": 0,
             "itemLevel": 5,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20752
         }
     },
@@ -192,6 +230,7 @@
             "crystal4": 0,
             "itemLevel": 293,
             "feedstock": 0,
+            "bonuses": [],
             "type": 179026
         }
     },
@@ -206,6 +245,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 81209
         }
     },
@@ -220,6 +260,10 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                435001,
+                435000
+            ],
             "type": 51010
         }
     },
@@ -234,6 +278,15 @@
             "crystal4": 5260,
             "itemLevel": 409,
             "feedstock": 0,
+            "bonuses": [
+                350000,
+                1420000,
+                1420030,
+                1420050,
+                1420140,
+                1420141,
+                1420142
+            ],
             "type": 88166
         }
     },
@@ -248,6 +301,14 @@
             "crystal4": 0,
             "itemLevel": 409,
             "feedstock": 0,
+            "bonuses": [
+                1424051,
+                1424020,
+                1424000,
+                1424090,
+                1424091,
+                1424092
+            ],
             "type": 88178
         }
     },
@@ -262,6 +323,14 @@
             "crystal4": 0,
             "itemLevel": 409,
             "feedstock": 0,
+            "bonuses": [
+                1423030,
+                1423000,
+                1423060,
+                1423120,
+                1423121,
+                1423122
+            ],
             "type": 88175
         }
     },
@@ -276,6 +345,10 @@
             "crystal4": 0,
             "itemLevel": 365,
             "feedstock": 0,
+            "bonuses": [
+                425300,
+                425201
+            ],
             "type": 88180
         }
     },
@@ -290,11 +363,20 @@
             "crystal4": 8113,
             "itemLevel": 415,
             "feedstock": 0,
+            "bonuses": [
+                1410020,
+                1410010,
+                1410000,
+                1410020,
+                1410160,
+                1410161,
+                1410162
+            ],
             "type": 88150
         }
     },
     {
-        "pk": 116,
+        "pk": 121,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -304,6 +386,10 @@
             "crystal4": 0,
             "itemLevel": 365,
             "feedstock": 0,
+            "bonuses": [
+                425200,
+                425201
+            ],
             "type": 88180
         }
     },
@@ -318,6 +404,9 @@
             "crystal4": 0,
             "itemLevel": 89,
             "feedstock": 0,
+            "bonuses": [
+                311300
+            ],
             "type": 12313
         }
     },
@@ -332,11 +421,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 6552
         }
     },
     {
-        "pk": 84,
+        "pk": 83,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -346,6 +436,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 200001
         }
     },
@@ -360,6 +451,10 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                435003,
+                435006
+            ],
             "type": 51021
         }
     },
@@ -374,6 +469,10 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                445007,
+                445015
+            ],
             "type": 51014
         }
     },
@@ -388,6 +487,10 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                435000,
+                435005
+            ],
             "type": 51016
         }
     },
@@ -402,6 +505,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 566
         }
     },
@@ -416,6 +520,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 194
         }
     },
@@ -430,6 +535,9 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                435006
+            ],
             "type": 51012
         }
     },
@@ -444,6 +552,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 498
         }
     },
@@ -458,6 +567,10 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                445003,
+                445007
+            ],
             "type": 51019
         }
     },
@@ -472,11 +585,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 150940
         }
     },
     {
-        "pk": 125,
+        "pk": 130,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -486,11 +600,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20809
         }
     },
     {
-        "pk": 123,
+        "pk": 128,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -500,6 +615,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 8141
         }
     },
@@ -514,6 +630,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 71423
         }
     },
@@ -528,11 +645,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 71418
         }
     },
     {
-        "pk": 86,
+        "pk": 84,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -542,6 +660,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 6562
         }
     },
@@ -556,6 +675,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 111
         }
     },
@@ -570,6 +690,10 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                465100,
+                465401
+            ],
             "type": 19706
         }
     },
@@ -584,6 +708,10 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                445006,
+                445009
+            ],
             "type": 51019
         }
     },
@@ -598,6 +726,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 154917
         }
     },
@@ -612,6 +741,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 45475
         }
     },
@@ -626,11 +756,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 200999
         }
     },
     {
-        "pk": 98,
+        "pk": 97,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -640,6 +771,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 45474
         }
     },
@@ -654,6 +786,7 @@
             "crystal4": 0,
             "itemLevel": 293,
             "feedstock": 0,
+            "bonuses": [],
             "type": 179024
         }
     },
@@ -668,6 +801,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 92074
         }
     },
@@ -682,91 +816,8 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 151643
-        }
-    },
-    {
-        "pk": 102,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 84322
-        }
-    },
-    {
-        "pk": 100,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 20912
-        }
-    },
-    {
-        "pk": 91,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 20907
-        }
-    },
-    {
-        "pk": 92,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 20908
-        }
-    },
-    {
-        "pk": 122,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 8944
-        }
-    },
-    {
-        "pk": 103,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 97712
         }
     },
     {
@@ -780,6 +831,97 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
+            "type": 84322
+        }
+    },
+    {
+        "pk": 99,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 20912
+        }
+    },
+    {
+        "pk": 90,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 20907
+        }
+    },
+    {
+        "pk": 91,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 20908
+        }
+    },
+    {
+        "pk": 127,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 8944
+        }
+    },
+    {
+        "pk": 102,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 97712
+        }
+    },
+    {
+        "pk": 100,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
             "type": 20914
         }
     },
@@ -794,6 +936,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 182433
         }
     },
@@ -808,6 +951,10 @@
             "crystal4": 0,
             "itemLevel": 321,
             "feedstock": 0,
+            "bonuses": [
+                445004,
+                445006
+            ],
             "type": 51008
         }
     },
@@ -822,11 +969,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 150970
         }
     },
     {
-        "pk": 118,
+        "pk": 123,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -836,6 +984,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 8621
         }
     },
@@ -850,11 +999,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 391
         }
     },
     {
-        "pk": 57,
+        "pk": 59,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -864,6 +1014,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 96405
         }
     },
@@ -878,11 +1029,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20911
         }
     },
     {
-        "pk": 93,
+        "pk": 92,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -892,11 +1044,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20909
         }
     },
     {
-        "pk": 89,
+        "pk": 88,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -906,11 +1059,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 166828
         }
     },
     {
-        "pk": 113,
+        "pk": 116,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -920,11 +1074,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 6393
         }
     },
     {
-        "pk": 96,
+        "pk": 95,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -934,6 +1089,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20974
         }
     },
@@ -948,6 +1104,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 96076
         }
     },
@@ -962,6 +1119,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20910
         }
     },
@@ -976,6 +1134,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 151
         }
     },
@@ -990,11 +1149,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 148
         }
     },
     {
-        "pk": 90,
+        "pk": 89,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1004,6 +1164,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 6333
         }
     },
@@ -1018,11 +1179,14 @@
             "crystal4": 0,
             "itemLevel": 325,
             "feedstock": 0,
+            "bonuses": [
+                435014
+            ],
             "type": 51017
         }
     },
     {
-        "pk": 124,
+        "pk": 129,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1032,11 +1196,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 8664
         }
     },
     {
-        "pk": 88,
+        "pk": 86,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1046,6 +1211,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 200999
         }
     },
@@ -1060,6 +1226,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 83400
         }
     },
@@ -1074,6 +1241,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 81212
         }
     },
@@ -1088,11 +1256,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 83402
         }
     },
     {
-        "pk": 114,
+        "pk": 117,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1102,11 +1271,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 20904
         }
     },
     {
-        "pk": 121,
+        "pk": 126,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1116,7 +1286,38 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 8940
+        }
+    },
+    {
+        "pk": 93,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 97803
+        }
+    },
+    {
+        "pk": 96,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 97860
         }
     },
     {
@@ -1130,49 +1331,8 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
-            "type": 97803
-        }
-    },
-    {
-        "pk": 97,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 97860
-        }
-    },
-    {
-        "pk": 95,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
+            "bonuses": [],
             "type": 20965
-        }
-    },
-    {
-        "pk": 59,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 152141
         }
     },
     {
@@ -1186,25 +1346,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
-            "type": 98104
-        }
-    },
-    {
-        "pk": 56,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
+            "bonuses": [],
             "type": 81208
         }
     },
     {
-        "pk": 120,
+        "pk": 98,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1214,20 +1361,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
-            "type": 8642
-        }
-    },
-    {
-        "pk": 99,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
+            "bonuses": [],
             "type": 152282
         }
     },
@@ -1242,6 +1376,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 154525
         }
     },
@@ -1256,6 +1391,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 397
         }
     },
@@ -1270,6 +1406,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 94109
         }
     },
@@ -1284,21 +1421,8 @@
             "crystal4": 0,
             "itemLevel": 293,
             "feedstock": 0,
+            "bonuses": [],
             "type": 179027
-        }
-    },
-    {
-        "pk": 83,
-        "model": "item.item",
-        "fields": {
-            "enchant": 0,
-            "crystal1": 0,
-            "crystal2": 0,
-            "crystal3": 0,
-            "crystal4": 0,
-            "itemLevel": 0,
-            "feedstock": 0,
-            "type": 6552
         }
     },
     {
@@ -1312,11 +1436,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 6562
         }
     },
     {
-        "pk": 119,
+        "pk": 124,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1326,11 +1451,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 8633
         }
     },
     {
-        "pk": 117,
+        "pk": 122,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1340,6 +1466,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 8127
         }
     },
@@ -1354,11 +1481,12 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 94110
         }
     },
     {
-        "pk": 112,
+        "pk": 114,
         "model": "item.item",
         "fields": {
             "enchant": 0,
@@ -1368,6 +1496,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 151666
         }
     },
@@ -1382,6 +1511,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 97393
         }
     },
@@ -1396,6 +1526,7 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 809
         }
     },
@@ -1410,7 +1541,175 @@
             "crystal4": 0,
             "itemLevel": 0,
             "feedstock": 0,
+            "bonuses": [],
             "type": 92
+        }
+    },
+    {
+        "pk": 105,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 179073
+        }
+    },
+    {
+        "pk": 115,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 791
+        }
+    },
+    {
+        "pk": 57,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 910
+        }
+    },
+    {
+        "pk": 112,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 810
+        }
+    },
+    {
+        "pk": 119,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 97700
+        }
+    },
+    {
+        "pk": 118,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 313,
+            "feedstock": 0,
+            "bonuses": [
+                465501
+            ],
+            "type": 19734
+        }
+    },
+    {
+        "pk": 56,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 909
+        }
+    },
+    {
+        "pk": 113,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 447
+        }
+    },
+    {
+        "pk": 125,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 8642
+        }
+    },
+    {
+        "pk": 131,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 98104
+        }
+    },
+    {
+        "pk": 132,
+        "model": "item.item",
+        "fields": {
+            "enchant": 0,
+            "crystal1": 0,
+            "crystal2": 0,
+            "crystal3": 0,
+            "crystal4": 0,
+            "itemLevel": 0,
+            "feedstock": 0,
+            "bonuses": [],
+            "type": 152141
         }
     }
 ]

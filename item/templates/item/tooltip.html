@@ -89,6 +89,19 @@ ID[{{ itemdata.id }}]<br>
 
  -->
 	<hr class = "line">
+	{% for bonus in itemdata.passivity.all %}
+		{{ bonus.tooltip }} <br>
+	{% endfor %}
+	
+	<hr class = "line">
+	
+	{% for bonus in itemdata.bonuses.all %}
+		{{ bonus.tooltip }} <br>
+	{% endfor %}
+
+	<hr class = "line">
+
+
 
 	{% for crystal in itemdata.crystals %}
 		<img src="{% static crystal.icon %}" align="left">

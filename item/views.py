@@ -25,6 +25,7 @@ def item(request, id):
         crystals += [ItemData.objects.get(id = crystal_id)]
     
     itemdata.crystals = crystals
+    itemdata.bonuses = item.bonuses
 
     template = loader.get_template("item/tooltip.html")
     return HttpResponse(

@@ -1,0 +1,1 @@
+python manage.py loaddata fixtures/passivity fixtures/equipdata fixtures/itemdata fixtures/items
