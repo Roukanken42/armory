@@ -11,7 +11,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 5128
+            "itemdata": 5128
         }
     },
     {
@@ -26,7 +26,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 81255
+            "itemdata": 81255
         }
     },
     {
@@ -41,7 +41,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 179580
+            "itemdata": 179580
         }
     },
     {
@@ -59,7 +59,7 @@
                 465100,
                 465101
             ],
-            "type": 19703
+            "itemdata": 19703
         }
     },
     {
@@ -74,7 +74,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 170005
+            "itemdata": 170005
         }
     },
     {
@@ -101,7 +101,7 @@
                 1410167,
                 1410168
             ],
-            "type": 97263
+            "itemdata": 97263
         }
     },
     {
@@ -119,7 +119,7 @@
                 445015,
                 445012
             ],
-            "type": 51003
+            "itemdata": 51003
         }
     },
     {
@@ -136,7 +136,7 @@
             "bonuses": [
                 435000
             ],
-            "type": 51006
+            "itemdata": 51006
         }
     },
     {
@@ -151,7 +151,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 1300
+            "itemdata": 1300
         }
     },
     {
@@ -168,7 +168,7 @@
             "bonuses": [
                 435000
             ],
-            "type": 51001
+            "itemdata": 51001
         }
     },
     {
@@ -186,7 +186,7 @@
                 435019,
                 435000
             ],
-            "type": 51005
+            "itemdata": 51005
         }
     },
     {
@@ -201,7 +201,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 152055
+            "itemdata": 152055
         }
     },
     {
@@ -216,7 +216,7 @@
             "itemLevel": 5,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20752
+            "itemdata": 20752
         }
     },
     {
@@ -231,7 +231,7 @@
             "itemLevel": 293,
             "feedstock": 0,
             "bonuses": [],
-            "type": 179026
+            "itemdata": 179026
         }
     },
     {
@@ -246,7 +246,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 81209
+            "itemdata": 81209
         }
     },
     {
@@ -264,7 +264,7 @@
                 435001,
                 435000
             ],
-            "type": 51010
+            "itemdata": 51010
         }
     },
     {
@@ -287,7 +287,7 @@
                 1420141,
                 1420142
             ],
-            "type": 88166
+            "itemdata": 88166
         }
     },
     {
@@ -309,7 +309,7 @@
                 1424091,
                 1424092
             ],
-            "type": 88178
+            "itemdata": 88178
         }
     },
     {
@@ -331,7 +331,7 @@
                 1423121,
                 1423122
             ],
-            "type": 88175
+            "itemdata": 88175
         }
     },
     {
@@ -349,7 +349,7 @@
                 425300,
                 425201
             ],
-            "type": 88180
+            "itemdata": 88180
         }
     },
     {
@@ -372,7 +372,7 @@
                 1410161,
                 1410162
             ],
-            "type": 88150
+            "itemdata": 88150
         }
     },
     {
@@ -390,7 +390,7 @@
                 425200,
                 425201
             ],
-            "type": 88180
+            "itemdata": 88180
         }
     },
     {
@@ -407,7 +407,7 @@
             "bonuses": [
                 311300
             ],
-            "type": 12313
+            "itemdata": 12313
         }
     },
     {
@@ -422,7 +422,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 6552
+            "itemdata": 6552
         }
     },
     {
@@ -437,7 +437,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 200001
+            "itemdata": 200001
         }
     },
     {
@@ -455,7 +455,7 @@
                 435003,
                 435006
             ],
-            "type": 51021
+            "itemdata": 51021
         }
     },
     {
@@ -473,7 +473,7 @@
                 445007,
                 445015
             ],
-            "type": 51014
+            "itemdata": 51014
         }
     },
     {
@@ -491,7 +491,7 @@
                 435000,
                 435005
             ],
-            "type": 51016
+            "itemdata": 51016
         }
     },
     {
@@ -506,7 +506,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 566
+            "itemdata": 566
         }
     },
     {
@@ -521,7 +521,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 194
+            "itemdata": 194
         }
     },
     {
@@ -538,7 +538,7 @@
             "bonuses": [
                 435006
             ],
-            "type": 51012
+            "itemdata": 51012
         }
     },
     {
@@ -553,7 +553,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 498
+            "itemdata": 498
         }
     },
     {
@@ -571,7 +571,7 @@
                 445003,
                 445007
             ],
-            "type": 51019
+            "itemdata": 51019
         }
     },
     {
@@ -586,7 +586,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 150940
+            "itemdata": 150940
         }
     },
     {
@@ -601,7 +601,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20809
+            "itemdata": 20809
         }
     },
     {
@@ -616,7 +616,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8141
+            "itemdata": 8141
         }
     },
     {
@@ -631,7 +631,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 71423
+            "itemdata": 71423
         }
     },
     {
@@ -646,7 +646,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 71418
+            "itemdata": 71418
         }
     },
     {
@@ -661,7 +661,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 6562
+            "itemdata": 6562
         }
     },
     {
@@ -676,7 +676,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 111
+            "itemdata": 111
         }
     },
     {
@@ -694,7 +694,7 @@
                 465100,
                 465401
             ],
-            "type": 19706
+            "itemdata": 19706
         }
     },
     {
@@ -712,7 +712,7 @@
                 445006,
                 445009
             ],
-            "type": 51019
+            "itemdata": 51019
         }
     },
     {
@@ -727,7 +727,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 154917
+            "itemdata": 154917
         }
     },
     {
@@ -742,7 +742,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 45475
+            "itemdata": 45475
         }
     },
     {
@@ -757,7 +757,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 200999
+            "itemdata": 200999
         }
     },
     {
@@ -772,7 +772,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 45474
+            "itemdata": 45474
         }
     },
     {
@@ -787,7 +787,7 @@
             "itemLevel": 293,
             "feedstock": 0,
             "bonuses": [],
-            "type": 179024
+            "itemdata": 179024
         }
     },
     {
@@ -802,7 +802,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 92074
+            "itemdata": 92074
         }
     },
     {
@@ -817,7 +817,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 151643
+            "itemdata": 151643
         }
     },
     {
@@ -832,7 +832,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 84322
+            "itemdata": 84322
         }
     },
     {
@@ -847,7 +847,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20912
+            "itemdata": 20912
         }
     },
     {
@@ -862,7 +862,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20907
+            "itemdata": 20907
         }
     },
     {
@@ -877,7 +877,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20908
+            "itemdata": 20908
         }
     },
     {
@@ -892,7 +892,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8944
+            "itemdata": 8944
         }
     },
     {
@@ -907,7 +907,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 97712
+            "itemdata": 97712
         }
     },
     {
@@ -922,7 +922,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20914
+            "itemdata": 20914
         }
     },
     {
@@ -937,7 +937,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 182433
+            "itemdata": 182433
         }
     },
     {
@@ -955,7 +955,7 @@
                 445004,
                 445006
             ],
-            "type": 51008
+            "itemdata": 51008
         }
     },
     {
@@ -970,7 +970,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 150970
+            "itemdata": 150970
         }
     },
     {
@@ -985,7 +985,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8621
+            "itemdata": 8621
         }
     },
     {
@@ -1000,7 +1000,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 391
+            "itemdata": 391
         }
     },
     {
@@ -1015,7 +1015,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 96405
+            "itemdata": 96405
         }
     },
     {
@@ -1030,7 +1030,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20911
+            "itemdata": 20911
         }
     },
     {
@@ -1045,7 +1045,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20909
+            "itemdata": 20909
         }
     },
     {
@@ -1060,7 +1060,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 166828
+            "itemdata": 166828
         }
     },
     {
@@ -1075,7 +1075,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 6393
+            "itemdata": 6393
         }
     },
     {
@@ -1090,7 +1090,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20974
+            "itemdata": 20974
         }
     },
     {
@@ -1105,7 +1105,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 96076
+            "itemdata": 96076
         }
     },
     {
@@ -1120,7 +1120,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20910
+            "itemdata": 20910
         }
     },
     {
@@ -1135,7 +1135,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 151
+            "itemdata": 151
         }
     },
     {
@@ -1150,7 +1150,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 148
+            "itemdata": 148
         }
     },
     {
@@ -1165,7 +1165,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 6333
+            "itemdata": 6333
         }
     },
     {
@@ -1182,7 +1182,7 @@
             "bonuses": [
                 435014
             ],
-            "type": 51017
+            "itemdata": 51017
         }
     },
     {
@@ -1197,7 +1197,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8664
+            "itemdata": 8664
         }
     },
     {
@@ -1212,7 +1212,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 200999
+            "itemdata": 200999
         }
     },
     {
@@ -1227,7 +1227,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 83400
+            "itemdata": 83400
         }
     },
     {
@@ -1242,7 +1242,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 81212
+            "itemdata": 81212
         }
     },
     {
@@ -1257,7 +1257,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 83402
+            "itemdata": 83402
         }
     },
     {
@@ -1272,7 +1272,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20904
+            "itemdata": 20904
         }
     },
     {
@@ -1287,7 +1287,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8940
+            "itemdata": 8940
         }
     },
     {
@@ -1302,7 +1302,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 97803
+            "itemdata": 97803
         }
     },
     {
@@ -1317,7 +1317,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 97860
+            "itemdata": 97860
         }
     },
     {
@@ -1332,7 +1332,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 20965
+            "itemdata": 20965
         }
     },
     {
@@ -1347,7 +1347,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 81208
+            "itemdata": 81208
         }
     },
     {
@@ -1362,7 +1362,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 152282
+            "itemdata": 152282
         }
     },
     {
@@ -1377,7 +1377,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 154525
+            "itemdata": 154525
         }
     },
     {
@@ -1392,7 +1392,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 397
+            "itemdata": 397
         }
     },
     {
@@ -1407,7 +1407,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 94109
+            "itemdata": 94109
         }
     },
     {
@@ -1422,7 +1422,7 @@
             "itemLevel": 293,
             "feedstock": 0,
             "bonuses": [],
-            "type": 179027
+            "itemdata": 179027
         }
     },
     {
@@ -1437,7 +1437,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 6562
+            "itemdata": 6562
         }
     },
     {
@@ -1452,7 +1452,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8633
+            "itemdata": 8633
         }
     },
     {
@@ -1467,7 +1467,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8127
+            "itemdata": 8127
         }
     },
     {
@@ -1482,7 +1482,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 94110
+            "itemdata": 94110
         }
     },
     {
@@ -1497,7 +1497,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 151666
+            "itemdata": 151666
         }
     },
     {
@@ -1512,7 +1512,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 97393
+            "itemdata": 97393
         }
     },
     {
@@ -1527,7 +1527,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 809
+            "itemdata": 809
         }
     },
     {
@@ -1542,7 +1542,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 92
+            "itemdata": 92
         }
     },
     {
@@ -1557,7 +1557,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 179073
+            "itemdata": 179073
         }
     },
     {
@@ -1572,7 +1572,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 791
+            "itemdata": 791
         }
     },
     {
@@ -1587,7 +1587,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 910
+            "itemdata": 910
         }
     },
     {
@@ -1602,7 +1602,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 810
+            "itemdata": 810
         }
     },
     {
@@ -1617,7 +1617,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 97700
+            "itemdata": 97700
         }
     },
     {
@@ -1634,7 +1634,7 @@
             "bonuses": [
                 465501
             ],
-            "type": 19734
+            "itemdata": 19734
         }
     },
     {
@@ -1649,7 +1649,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 909
+            "itemdata": 909
         }
     },
     {
@@ -1664,7 +1664,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 447
+            "itemdata": 447
         }
     },
     {
@@ -1679,7 +1679,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 8642
+            "itemdata": 8642
         }
     },
     {
@@ -1694,7 +1694,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 98104
+            "itemdata": 98104
         }
     },
     {
@@ -1709,7 +1709,7 @@
             "itemLevel": 0,
             "feedstock": 0,
             "bonuses": [],
-            "type": 152141
+            "itemdata": 152141
         }
     }
 ]

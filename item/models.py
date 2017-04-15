@@ -28,6 +28,10 @@ class ItemData(models.Model):                   # comments for parsing purposes
     )
 
     passivity = models.ManyToManyField("Passivity")
+
+    def __str__(self):
+        return "<" + self.name + ">"
+
     # discutable
 
     # "artisanable": false,
@@ -77,18 +81,45 @@ class EquipmentData(models.Model):
     attack       = models.IntegerField(null=True)       #minAtk / maxAtk
     
 class Item(models.Model):
-    type      = models.IntegerField()
+    itemdata  = models.ForeignKey(ItemData)
+    server    = models.ForeignKey("gear.Server")
 
-    enchant   = models.IntegerField()
-    itemLevel = models.IntegerField()
-    feedstock = models.IntegerField()
+    uid       = models.IntegerField()
+
+    enchant   = models.IntegerField(null = True)
+    itemLevel = models.IntegerField(null = True)
+    feedstock = models.IntegerField(null = True)
     
-    crystal1  = models.IntegerField()
-    crystal2  = models.IntegerField()
-    crystal3  = models.IntegerField()
-    crystal4  = models.IntegerField()
+    crystal1  = models.IntegerField(null = True)
+    crystal2  = models.IntegerField(null = True)
+    crystal3  = models.IntegerField(null = True)
+    crystal4  = models.IntegerField(null = True)
 
     bonuses   = models.ManyToManyField("Passivity")
+
+    def __str__(self):
+        return str(self.itemdata)
+
+    @classmethod
+    def create_from_json(self, data, server):
+        itemdata = ItemData.objects.get(id = data["item"])
+        item, created = Item.objects.get_or_create(uid = data["uid"], server = server, itemdata = itemdata)
+
+        for name in item.__dict__.keys():
+            if name.startswith("_") or name in ["id", "uid", "itemdata_id", "server_id"]:
+                continue
+
+            setattr(item, name, data[name])
+
+        bonuses = [
+            Passivity.objects.get(id = bonus)
+            for bonus in data["bonuses"]
+        ]
+
+        item.bonuses.add(*bonuses)
+        item.save()
+
+        return item
 
 
 class Passivity(models.Model):

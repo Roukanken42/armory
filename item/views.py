@@ -9,7 +9,6 @@ import os.path
 # Create your views here.
 def item(request, id):
     item = Item.objects.get(id = id)
-    itemdata = ItemData.objects.get(id = item.type)
 
     itemdata.enchant = item.enchant
     itemdata.itemLevel = item.itemLevel
@@ -28,6 +27,7 @@ def item(request, id):
     itemdata.bonuses = item.bonuses
 
     template = loader.get_template("item/tooltip.html")
+    
     return HttpResponse(
         template.render({
             "itemdata": itemdata,
