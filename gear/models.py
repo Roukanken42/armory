@@ -1,8 +1,9 @@
 from django.db import models
 from item.models import Item
 
-# Create your models here.
-class Gear_Item(models.Model):
+from common.utils import ChoiceEnum
+
+class GearType(ChoiceEnum):
     WEAPON = 1
     ARMOR  = 3
     GLOVES = 4
@@ -16,27 +17,12 @@ class Gear_Item(models.Model):
 
     INNERWEAR = 11
     BELT      = 19
-    BROOCH    = 20
+    BROOCH    = 20    
 
-
-    GEARSET_SLOTS = (
-        (WEAPON, "Weapon"),
-        (ARMOR, "Armor"),
-        (GLOVES, "Gloves"),
-        (BOOTS, "Boots"),
-        (LEFT_EARING, "Left earing"),
-        (RIGHT_EARING, "Right earing"),
-        (LEFT_RING, "Left ring"),
-        (RIGHT_RING, "Right ring"),
-        (NECKLACE, "Necklace"),
-        (INNERWEAR, "Innerwear"),
-        (BELT, "Belt"),
-        (BROOCH, "Brooch"),        
-    )
-
+class Gear_Item(models.Model):
     item    = models.ForeignKey(Item,   models.CASCADE)
     gearset = models.ForeignKey("Gear", models.CASCADE)
-    slot    = models.IntegerField(choices = GEARSET_SLOTS)
+    slot    = models.IntegerField(choices = GearType.choices())
 
 
 class Gear(models.Model):
