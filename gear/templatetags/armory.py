@@ -16,4 +16,12 @@ def getitem(obj, value):
     except KeyError:
         return None
 
+@register.filter(name="addstr")
+def addstr(a, b):
+    try: 
+        return str(a) + str(b)
+    except (TypeError, ValueError):
+        return None
+
+
 

@@ -86,7 +86,7 @@ crystal_positions = {
 }
 
 def gear(request, id):
-    return HttpResponse(
+    return render (
         request,
         "gear/gear.html",        
         {

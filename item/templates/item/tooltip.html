@@ -1,47 +1,48 @@
 {% load static %}
+{% load armory %}
 
 <style>
 
 .item_box 	{
-		color: #BBBBBB; 
-		background-color:#051423;
-		padding:10px 10px 10px 10px;
-		font-family: verdana;
-		border-style: solid;
-		border-width: 2px;
-		border-color: #3E7BE8
-	}
+	color: #BBBBBB; 
+	background-color:#051423;
+	padding:10px 10px 10px 10px;
+	font-family: verdana;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #3E7BE8
+}
 
-.line
-	{
-		border: 0;
-		height: 2px;
-		background-image: -webkit-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
-		background-image: -moz-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
-		background-image: -ms-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
-		background-image: -o-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
-		margin-bottom: 15px;
-	}	
+.line {
+	border: 0;
+	height: 2px;
+	background-image: -webkit-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+	background-image: -moz-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(42,49,58,0),rgba(42,49,58,1) 9%,rgba(42,49,58,1) 91%,rgba(0,0,0,0));
+	margin-bottom: 15px;
+}	
 	
-.rarity_color 
-	{
-		{% if item.data.rarity == 1 %}
-			color: #018B04;
-		{% elif item.data.rarity == 2%}
-			color: #01A0D7;
-		{% elif item.data.rarity == 3%}
-			color: #D98F05;
-		{% else %}
-			color: #BBBBBB;
-		{% endif %}
-	}
+.rarity_0 {
+	color: #BBBBBB;
+}
 
+.rarity_1 {
+	color: #018B04;
+}
 
-	
+.rarity_2 {
+	color: #01A0D7;
+}
+
+.rarity_3 {
+	color: #D98F05;
+}
+
 </style>
 
 <div id="item" class = "item_box" style="width:400px;" >
-	<font size = 4 class = "rarity_color"> {{ item.data.name }} </font>
+	<font size = 4 class = {{ "rarity_"|addstr:item.data.rarity }}> {{ item.data.name }} </font>
 
 	<br><br>
 	<table style="width:100%">
