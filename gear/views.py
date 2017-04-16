@@ -77,24 +77,22 @@ positions = {
 }
 
 crystal_positions = {
-    Slot.WEAPON: ((8, 72), (8, 118), (8, 164), (8, 210)),
-    Slot.ARMOR: ((410, 72), (410, 118), (410, 164), (410, 210)),
-    Slot.RIGHT_EARING: ((410, 8),),
-    Slot.LEFT_EARING: ((8, 8),),
-    Slot.RIGHT_RING: ((410, 274),),
-    Slot.LEFT_RING: ((8, 274),),
+    Slot.WEAPON:        ((8, 72), (8, 118), (8, 164), (8, 210)),
+    Slot.ARMOR:         ((410, 72), (410, 118), (410, 164), (410, 210)),
+    Slot.RIGHT_EARING:  ((410, 8),),
+    Slot.LEFT_EARING:   ((8, 8),),
+    Slot.RIGHT_RING:    ((410, 274),),
+    Slot.LEFT_RING:     ((8, 274),),
 }
 
 def gear(request, id):
-    gear = get_object_or_404(Gear, id=id)
-
-    template = loader.get_template("gear/gear.html")
-
     return HttpResponse(
-        template.render({
-            "gear": gear,
+        request,
+        "gear/gear.html",        
+        {
+            "gear": get_object_or_404(Gear, id=id),
             "Slot": Slot,
             "positions": positions,
             "crystal_positions": crystal_positions
-        })
+        }
     )
