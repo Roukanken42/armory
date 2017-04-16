@@ -1,0 +1,13 @@
+{% for equip in gear.gear_item_set.all %}
+    {% with equip.item as itemdata %}
+        {% include "item/tooltip.html" %}
+    {% endwith %}
+
+    {{ equip.slot }}
+
+    {% if equip.slot == slot.WEAPON.value %}
+        is a weapon
+    {% endif %}
+
+    <br>
+{% endfor %}

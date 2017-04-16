@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+
+from django.template import loader
 
 from django.http import *
 from .models import *
@@ -61,4 +64,16 @@ def player(request, id):
     ...
 
 def gear(request, id):
-    ...
+    gear = get_object_or_404(Gear, id=id)
+
+    for slot in gear.gear_item_set.all().select_related():
+        print(slot.slot, slot.item)
+
+    template = loader.get_template("gear/gear.html")
+
+    return HttpResponse(
+        template.render({
+            "gear": gear,
+            "slot": Slot
+        })
+    )

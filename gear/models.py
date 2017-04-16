@@ -2,8 +2,9 @@ from django.db import models
 from item.models import Item
 
 from common.utils import ChoiceEnum
+from enum import Enum
 
-class GearType(ChoiceEnum):
+class Slot(ChoiceEnum):
     WEAPON = 1
     ARMOR  = 3
     GLOVES = 4
@@ -22,13 +23,18 @@ class GearType(ChoiceEnum):
 class Gear_Item(models.Model):
     item    = models.ForeignKey(Item,   models.CASCADE)
     gearset = models.ForeignKey("Gear", models.CASCADE)
-    slot    = models.IntegerField(choices = GearType.choices())
+    slot    = models.IntegerField(choices = Slot.choices())
 
 
 class Gear(models.Model):
     timestamp = models.DateField(auto_now=True)
     items = models.ManyToManyField(Item, through=Gear_Item)
 
+    def get(self, slot):
+        if isinstance(slot, Enum):
+            slot = slot.value
+
+        return self.items.get(slot=slot)
 
 class Server(models.Model):
     id = models.IntegerField(primary_key=True)

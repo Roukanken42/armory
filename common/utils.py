@@ -1,5 +1,10 @@
 from enum import Enum
 
+def dont_call(cls):
+    cls.do_not_call_in_templates = True
+    return cls
+
+@dont_call
 class ChoiceEnum(Enum):
     
     @classmethod
@@ -12,6 +17,9 @@ class ChoiceEnum(Enum):
 
         return tuple(res)
 
-    
+
     def __call__(self):
         return self.value
+
+    def __int__(self):
+        return self()
