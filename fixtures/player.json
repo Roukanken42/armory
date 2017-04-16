@@ -1,0 +1,1 @@
+[{"model": "gear.player", "pk": 1, "fields": {"pid": 2801, "name": "Roukanken", "server": 26, "gearsets": [5]}}, {"model": "gear.player", "pk": 2, "fields": {"pid": 42073, "name": "Albadea", "server": 26, "gearsets": [6, 7]}}]
