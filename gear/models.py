@@ -1,7 +1,7 @@
 from django.db import models
 from item.models import Item
 
-from common.utils import ChoiceEnum
+from common.utils import *
 from enum import Enum
 
 class Slot(ChoiceEnum):
@@ -20,21 +20,17 @@ class Slot(ChoiceEnum):
     BELT      = 19
     BROOCH    = 20    
 
-class Gear_Item(models.Model):
-    item    = models.ForeignKey(Item,   models.CASCADE)
-    gearset = models.ForeignKey("Gear", models.CASCADE)
-    slot    = models.IntegerField(choices = Slot.choices())
-
-
-class Gear(models.Model):
+@make_model
+@add_enum_field(Slot, lambda enum: models.ForeignKey(Item, related_name=enum.name.lower(), null=True))
+class Gear:
     timestamp = models.DateField(auto_now=True)
-    items = models.ManyToManyField(Item, through=Gear_Item)
 
-    def get(self, slot):
-        if isinstance(slot, Enum):
-            slot = slot.value
+    def __getitem__(self, x):
+        return getattr(self, x.name.lower())
 
-        return self.items.get(slot=slot)
+    def __setitem__(self, x, value):
+        return setattr(self, x.name.lower(), value)
+
 
 class Server(models.Model):
     id = models.IntegerField(primary_key=True)

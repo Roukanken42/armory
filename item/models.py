@@ -90,10 +90,10 @@ class Item(models.Model):
     itemLevel = models.IntegerField(null = True)
     feedstock = models.IntegerField(null = True)
     
-    crystal1  = models.IntegerField(null = True)
-    crystal2  = models.IntegerField(null = True)
-    crystal3  = models.IntegerField(null = True)
-    crystal4  = models.IntegerField(null = True)
+    crystal1  = models.ForeignKey(ItemData, related_name="crystal1", null = True)
+    crystal2  = models.ForeignKey(ItemData, related_name="crystal2", null = True)
+    crystal3  = models.ForeignKey(ItemData, related_name="crystal3", null = True)
+    crystal4  = models.ForeignKey(ItemData, related_name="crystal4", null = True)
 
     bonuses   = models.ManyToManyField("Passivity")
 
@@ -109,7 +109,15 @@ class Item(models.Model):
             if name.startswith("_") or name in ["id", "uid", "itemdata_id", "server_id"]:
                 continue
 
-            setattr(item, name, data[name])
+            if name.endswith("_id"):
+                value = data[name[:-3]]
+
+                if value == 0: 
+                    value = None
+            else:
+                value = data[name]
+
+            setattr(item, name, value)
 
         bonuses = [
             Passivity.objects.get(id = bonus)
@@ -120,7 +128,6 @@ class Item(models.Model):
         item.save()
 
         return item
-
 
 class Passivity(models.Model):
     name = models.CharField(max_length=200)     # string

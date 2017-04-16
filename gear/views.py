@@ -45,19 +45,15 @@ def upload(request):
     player.gearsets.add(gear)
 
     for item in data["items"]:
-        slot = item["slot"]
-        
-        if slot not in [x[0] for x in Gear_Item.GEARSET_SLOTS]:
+        try:
+            slot = Slot(item["slot"])
+        except ValueError:
             continue
 
         item = Item.create_from_json(item, server)
+        gear[slot] = item
 
-        gi, created = Gear_Item.objects.get_or_create(gearset = gear, slot = slot, defaults={"item": item})
-        
-        if not created:
-            gi.item = item
-            gi.save()
-
+    gear.save()
     return HttpResponse("OK")
 
 def player(request, id):

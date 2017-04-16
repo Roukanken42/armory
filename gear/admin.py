@@ -7,4 +7,3 @@ from .models import *
 admin.site.register(Gear)
 admin.site.register(Server)
 admin.site.register(Player)
-admin.site.register(Gear_Item)

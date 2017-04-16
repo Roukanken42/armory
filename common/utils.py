@@ -1,4 +1,5 @@
 from enum import Enum
+from django.db import models
 
 def dont_call(cls):
     cls.do_not_call_in_templates = True
@@ -23,3 +24,20 @@ class ChoiceEnum(Enum):
 
     def __int__(self):
         return self()
+
+def add_enum_field(enum, func):
+    def modify(cls):
+        for name, member in enum._member_map_.items():
+            name = name.lower()
+            setattr(cls, name, func(member))
+
+        return cls
+    return modify
+
+def make_model(cls):
+    data = dict(cls.__dict__)
+    del data["__dict__"]
+    del data["__weakref__"]
+
+    return type(cls.__name__, (models.Model, ), data)
+

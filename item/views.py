@@ -10,26 +10,26 @@ import os.path
 def item(request, id):
     item = Item.objects.get(id = id)
 
-    itemdata.enchant = item.enchant
-    itemdata.itemLevel = item.itemLevel
-    itemdata.feedstock = item.feedstock
+    # itemdata.enchant = item.enchant
+    # itemdata.itemLevel = item.itemLevel
+    # itemdata.feedstock = item.feedstock
 
-    crystals = []
-    for crystal in ["crystal1", "crystal2", "crystal3", "crystal4"]:
-        crystal_id = getattr(item, crystal)
+    # crystals = []
+    # for crystal in ["crystal1", "crystal2", "crystal3", "crystal4"]:
+    #     crystal_id = getattr(item, crystal)
         
-        if crystal_id == 0:
-            continue
+    #     if crystal_id == 0:
+    #         continue
 
-        crystals += [ItemData.objects.get(id = crystal_id)]
+    #     crystals += [ItemData.objects.get(id = crystal_id)]
     
-    itemdata.crystals = crystals
-    itemdata.bonuses = item.bonuses
+    # itemdata.crystals = crystals
+    # itemdata.bonuses = item.bonuses
 
     template = loader.get_template("item/tooltip.html")
     
     return HttpResponse(
         template.render({
-            "itemdata": itemdata,
+            "item": item,
         })
     )
