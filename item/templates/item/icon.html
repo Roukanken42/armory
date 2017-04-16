@@ -1,0 +1,16 @@
+{% load static %}
+
+
+{% with item.data.rarity|stringformat:"s" as rarity_s%}
+    {% with "item/icon_grade_"|add:rarity_s|add:".png" as corner_img %}
+    
+    <div style="position: relative">
+        <img src="{% static item.data.icon %}" align="left" style = "position: relative; top: 0; left: 0;" width={{size}} height={{size}}>
+        {% if dont_show_rarity %}
+        {% else %}
+            <img src="{% static corner_img %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
+        {% endif %}
+    </div>
+
+    {% endwith %}
+{% endwith %}

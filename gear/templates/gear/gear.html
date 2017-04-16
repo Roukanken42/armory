@@ -1,13 +1,63 @@
-{% for equip in gear.gear_item_set.all %}
-    {% with equip.item as itemdata %}
-        {% include "item/tooltip.html" %}
-    {% endwith %}
+{% load static %}
+{% load armory %}
 
-    {{ equip.slot }}
+<style>
+.tooltip .tooltip-content {
+    visibility: hidden;
+    padding: 5px 0;
+    border-radius: 6px;
 
-    {% if equip.slot == slot.WEAPON.value %}
-        is a weapon
-    {% endif %}
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 200%;
+    margin-left: -60px;
 
-    <br>
-{% endfor %}
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tooltip:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+</style>
+
+<div style="position: relative; left: 0; top: 0;">
+    <img src={% static "gear/profile.png" %} id="icon_grade" style="position: absolute; top: 0px; left: 0px;">
+
+    {% for slot, item in gear.all %}
+        {% if item %}
+            {% with positions|getitem:slot as point %}
+                {% with 50 as size %}
+                    <div class="tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">
+                        {% include "item/icon.html" %}        
+                    
+                        <div class="tooltip-content">
+                            {% include "item/tooltip.html" %}
+                        </div> 
+                    </div>
+                {% endwith %}
+            {% endwith %}
+
+            {% with crystal_positions|getitem:slot as pos %}
+                {% for item, point in item.crystals|zip:pos %}
+                    {% with 39 as size %}
+                        <div class="tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">    
+                            {% include "item/icon.html" %}
+
+                            <div class="tooltip-content">
+                                {% with True as crystal %}
+                                    {% include "item/tooltip.html" %}
+                                {% endwith %}
+                            </div> 
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            {% endwith %}
+        {% endif %}
+    {% endfor %}
+</div>
+

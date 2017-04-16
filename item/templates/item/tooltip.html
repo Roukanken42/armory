@@ -25,11 +25,11 @@
 	
 .rarity_color 
 	{
-		{% if itemdata.rarity == 1 %}
+		{% if item.data.rarity == 1 %}
 			color: #018B04;
-		{% elif itemdata.rarity == 2%}
+		{% elif item.data.rarity == 2%}
 			color: #01A0D7;
-		{% elif itemdata.rarity == 3%}
+		{% elif item.data.rarity == 3%}
 			color: #D98F05;
 		{% else %}
 			color: #BBBBBB;
@@ -41,42 +41,35 @@
 </style>
 
 <div id="item" class = "item_box" style="width:400px;" >
-	<font size = 4 class = "rarity_color"> {{ itemdata.name }} </font>
+	<font size = 4 class = "rarity_color"> {{ item.data.name }} </font>
 
 	<br><br>
 	<table style="width:100%">
 		<tr>
 			<td valign="top">
-				<div style="position: relative; left: 0; top: 0;">
-					{% with itemdata.rarity|stringformat:"s" as rarity_s%}
-						{% with "item/icon_grade_"|add:rarity_s|add:".png" as corner_img %}
-
-						<img src="{% static itemdata.icon %}" align="left" style = "position: relative; top: 0; left: 0;" width="50" height="50">
-						<img src="{% static corner_img %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px;" width="16" height="16">
-						
-						{% endwith %}
-					{% endwith %}
-				</div>
+				{% with 50 as size %}
+					{% include "item/icon.html" %}
+				{% endwith %}
 			</td>
 			<td>
 				{% autoescape off %}
-				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ itemdata.tooltip }} 
+				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ item.data.tooltip }} 
 				{% endautoescape %}
 				<br>
-				Attack: {{ itemdata.equipdata.attack }}
+				Attack: {{ item.data.equipment.attack }}
 				</font>
 				<br>
 				<font size = 2 style = "color: #AB181A; line-height: 150%;">
-					{% if not itemdata.tradeable %}
+					{% if not item.data.tradeable %}
 						Cannot trade.
 					{% endif %}
-					{% if not itemdata.warehouseStorable %}
+					{% if not item.data.warehouseStorable %}
 						Cannot be stored in bank.
 					{% endif %}		
-					{% if not itemdata.guildWarehouseStorable %}
+					{% if not item.data.guildWarehouseStorable %}
 						This item can't be stored in the guild bank.
 					{% endif %}		
-					{% if not itemdata.storeSellable %}
+					{% if not item.data.storeSellable %}
 						No sale value.
 					{% endif %}		
 				</font>
@@ -85,27 +78,32 @@
 	</table>
 			
 				<!--	
-ID[{{ itemdata.id }}]<br>
+ID[{{ data.id }}]<br>
 
  -->
 	<hr class = "line">
-	{% for bonus in itemdata.passivity.all %}
+	{% for bonus in item.data.passivity.all %}
 		{{ bonus.tooltip }} <br>
 	{% endfor %}
 	
 	<hr class = "line">
 	
-	{% for bonus in itemdata.bonuses.all %}
-		{{ bonus.tooltip }} <br>
-	{% endfor %}
+	{% if crystal %}
+	{% else %}
+		{% for bonus in item.bonuses.all %}
+			{{ bonus.tooltip }} <br>
+		{% endfor %}
+	{% endif %}
 
 	<hr class = "line">
 
-
-
-	{% for crystal in itemdata.crystals %}
-		<img src="{% static crystal.icon %}" align="left">
-		<font size = 2 style = "color:#3E7BE8; line-height: 180%;"> {{ crystal.name }} <br></font>
+	{% for item in item.crystals %}
+		{% with True as dont_show_rarity %}
+			{% with 22 as size %}
+				{% include "item/icon.html" %}
+			{% endwith %}
+		{% endwith %}
+		<font size = 2 style = "color:#3E7BE8; line-height: 180%;"> {{ item.data.name }} <br></font>
 	{% endfor %}	
 
 </div>

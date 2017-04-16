@@ -21,7 +21,7 @@ class ItemData(models.Model):                   # comments for parsing purposes
     rank = models.IntegerField(null=True)
     rarity = models.IntegerField(null=True)          #rareGrade
 
-    equipdata = models.ForeignKey(
+    equipment = models.ForeignKey(
         "EquipmentData",
         models.SET_NULL,
         null = True
@@ -81,7 +81,7 @@ class EquipmentData(models.Model):
     attack       = models.IntegerField(null=True)       #minAtk / maxAtk
     
 class Item(models.Model):
-    itemdata  = models.ForeignKey(ItemData)
+    data      = models.ForeignKey(ItemData)
     server    = models.ForeignKey("gear.Server")
 
     uid       = models.IntegerField()
@@ -98,15 +98,18 @@ class Item(models.Model):
     bonuses   = models.ManyToManyField("Passivity")
 
     def __str__(self):
-        return str(self.itemdata)
+        return str(self.data)
+
+    def crystals(self):
+        return [Item(data = x, server = self.server, uid = 0) for x in [self.crystal1, self.crystal2, self.crystal3, self.crystal4] if x != None]
 
     @classmethod
     def create_from_json(self, data, server):
-        itemdata = ItemData.objects.get(id = data["item"])
-        item, created = Item.objects.get_or_create(uid = data["uid"], server = server, itemdata = itemdata)
+        data = ItemData.objects.get(id = data["item"])
+        item, created = Item.objects.get_or_create(uid = data["uid"], server = server, data = data)
 
         for name in item.__dict__.keys():
-            if name.startswith("_") or name in ["id", "uid", "itemdata_id", "server_id"]:
+            if name.startswith("_") or name in ["id", "uid", "data_id", "server_id"]:
                 continue
 
             if name.endswith("_id"):

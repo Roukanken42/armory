@@ -59,17 +59,42 @@ def upload(request):
 def player(request, id):
     ...
 
+
+positions = {
+    Slot.WEAPON:       (69, 93),
+    Slot.ARMOR:        (338, 93),
+    Slot.BOOTS:        (69, 178),
+    Slot.GLOVES:       (338, 178),
+    Slot.NECKLACE:     (160, 80),
+    Slot.INNERWEAR:    (203, 151),
+    Slot.BELT:         (203, 224),
+    Slot.LEFT_RING:    (58, 263),
+    Slot.RIGHT_RING:   (349, 263),
+    Slot.LEFT_EARING:  (58, 9),
+    Slot.RIGHT_EARING: (349, 9),
+    Slot.BROOCH:       (247, 80),
+    Slot.CIRCLET:      (137, 9),
+}
+
+crystal_positions = {
+    Slot.WEAPON: ((8, 72), (8, 118), (8, 164), (8, 210)),
+    Slot.ARMOR: ((410, 72), (410, 118), (410, 164), (410, 210)),
+    Slot.RIGHT_EARING: ((410, 8),),
+    Slot.LEFT_EARING: ((8, 8),),
+    Slot.RIGHT_RING: ((410, 274),),
+    Slot.LEFT_RING: ((8, 274),),
+}
+
 def gear(request, id):
     gear = get_object_or_404(Gear, id=id)
-
-    for slot in gear.gear_item_set.all().select_related():
-        print(slot.slot, slot.item)
 
     template = loader.get_template("gear/gear.html")
 
     return HttpResponse(
         template.render({
             "gear": gear,
-            "slot": Slot
+            "Slot": Slot,
+            "positions": positions,
+            "crystal_positions": crystal_positions
         })
     )

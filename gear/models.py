@@ -17,6 +17,7 @@ class Slot(ChoiceEnum):
     NECKLACE     = 10
 
     INNERWEAR = 11
+    CIRCLET   = 12
     BELT      = 19
     BROOCH    = 20    
 
@@ -31,6 +32,9 @@ class Gear:
     def __setitem__(self, x, value):
         return setattr(self, x.name.lower(), value)
 
+    def all(self):
+        for x in Slot.all():
+            yield (x, self[x])
 
 class Server(models.Model):
     id = models.IntegerField(primary_key=True)

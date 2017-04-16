@@ -22,8 +22,9 @@ class ChoiceEnum(Enum):
     def __call__(self):
         return self.value
 
-    def __int__(self):
-        return self()
+    @classmethod
+    def all(cls):
+        return (x for x in cls._member_map_.values())
 
 def add_enum_field(enum, func):
     def modify(cls):
