@@ -19,7 +19,35 @@ class Slot(ChoiceEnum):
     INNERWEAR = 11
     CIRCLET   = 12
     BELT      = 19
-    BROOCH    = 20    
+    BROOCH    = 20
+
+class Race(ChoiceEnum):
+    HUMAN       = 0
+    HIGH_ELF    = 1
+    AMAN        = 2
+    CASTANIC    = 3
+    POPORI      = 4
+    BARAKA      = 5
+
+class Gender(ChoiceEnum):
+    FEMALE  = 0
+    MALE    = 1
+
+class Klass(ChoiceEnum):
+    WARRIOR     = 1
+    LANCER      = 2
+    SLAYER      = 3
+    BERSERKER   = 4
+    SORCERER    = 5
+    ARCHER      = 6
+    PRIEST      = 7
+    MYSTIC      = 8
+    REAPER      = 9
+    GUNNER      = 10
+    BRAWLER     = 11
+    NINJA       = 12
+    VALKYRIE    = 13
+
 
 @make_model
 @add_enum_field(Slot, lambda enum: models.ForeignKey(Item, related_name=enum.name.lower(), null=True))
@@ -49,6 +77,10 @@ class Player(models.Model):
     pid     = models.IntegerField()
     name   = models.CharField(max_length=30)
     server = models.ForeignKey(Server, models.CASCADE)
+
+    race   = models.IntegerField(choices =   Race.choices(), null=True)
+    gender = models.IntegerField(choices = Gender.choices(), null=True)
+    klass  = models.IntegerField(choices =  Klass.choices(), null=True)
 
     gearsets = models.ManyToManyField(Gear)
 

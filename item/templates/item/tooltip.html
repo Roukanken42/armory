@@ -91,7 +91,7 @@ ID[{{ data.id }}]<br>
 	
 	{% if crystal %}
 	{% else %}
-		{% for bonus in item.bonuses.all %}
+		{% for bonus in item.passivity.all %}
 			{{ bonus.tooltip }} <br>
 		{% endfor %}
 	{% endif %}

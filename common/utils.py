@@ -14,7 +14,7 @@ class ChoiceEnum(Enum):
 
         for name, value in cls._member_map_.items():
             name = name.capitalize().replace("_", " ")
-            res += [(name, value.value)]
+            res += [(value.value, name)]
 
         return tuple(res)
 
