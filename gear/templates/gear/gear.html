@@ -25,30 +25,30 @@
 }
 </style>
 
-<div style="position: relative; left: 0; top: 0;">
-    <img src={% static "gear/profile.png" %} id="icon_grade" style="position: absolute; top: 0px; left: 0px;">
+<div style="position: relative;">
+    <img src={% static "gear/profile.png" %} id="icon_grade" style="position: relative; top: 0px; left: 0px; z-index: 8;">
 
     {% for slot, item in gear.all %}
         {% if item %}
-            {% with positions|getitem:slot as point %}
+            {% with gear.positions|getitem:slot as point %}
                 {% with 50 as size %}
                     <div class="tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">
                         {% include "item/icon.html" %}        
                     
-                        <div class="tooltip-content">
+                        <div class="tooltip-content" style="z-index: 42;">
                             {% include "item/tooltip.html" %}
                         </div> 
                     </div>
                 {% endwith %}
             {% endwith %}
 
-            {% with crystal_positions|getitem:slot as pos %}
+            {% with gear.crystal_positions|getitem:slot as pos %}
                 {% for item, point in item.crystals|zip:pos %}
                     {% with 39 as size %}
                         <div class="tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">    
                             {% include "item/icon.html" %}
 
-                            <div class="tooltip-content">
+                            <div class="tooltip-content" style="z-index: 42;">
                                 {% with True as crystal %}
                                     {% include "item/tooltip.html" %}
                                 {% endwith %}

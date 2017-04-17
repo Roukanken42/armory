@@ -64,6 +64,32 @@ class Gear:
         for x in Slot.all():
             yield (x, self[x])
 
+
+    positions = {
+        Slot.WEAPON:       (69, 93),
+        Slot.ARMOR:        (338, 93),
+        Slot.BOOTS:        (69, 178),
+        Slot.GLOVES:       (338, 178),
+        Slot.NECKLACE:     (160, 80),
+        Slot.INNERWEAR:    (203, 151),
+        Slot.BELT:         (203, 224),
+        Slot.LEFT_RING:    (58, 263),
+        Slot.RIGHT_RING:   (349, 263),
+        Slot.LEFT_EARING:  (58, 9),
+        Slot.RIGHT_EARING: (349, 9),
+        Slot.BROOCH:       (247, 80),
+        Slot.CIRCLET:      (137, 9),
+    }
+
+    crystal_positions = {
+        Slot.WEAPON:        ((8, 72), (8, 118), (8, 164), (8, 210)),
+        Slot.ARMOR:         ((410, 72), (410, 118), (410, 164), (410, 210)),
+        Slot.RIGHT_EARING:  ((410, 8),),
+        Slot.LEFT_EARING:   ((8, 8),),
+        Slot.RIGHT_RING:    ((410, 274),),
+        Slot.LEFT_RING:     ((8, 274),),
+    }
+
 class Server(models.Model):
     id = models.IntegerField(primary_key=True)
     name   = models.CharField(max_length=30)
@@ -87,3 +113,29 @@ class Player(models.Model):
     def __str__(self):
         return "<Player {0.name}: pid={0.pid}, server={0.server.name}>".format(self)
 
+
+    # make a custom field I guess later
+    class Display:
+        def __init__(self, parent):
+            self.parent = parent
+
+        @property 
+        def race(self):
+            race = Race(self.parent.race)
+
+            if race == Race.POPORI and Gender(self.parent.gender) == Gender.FEMALE:
+                return "Elin"
+
+            return race.display_name()
+
+        @property
+        def gender(self):
+            return Gender(self.parent.gender).display_name()
+
+        @property
+        def klass(self):
+            return Klass(self.parent.klass).display_name()
+
+    def __init__(self, *args, **kwargs):
+        super(Player, self).__init__(*args, **kwargs)
+        self.display = Player.Display(self)

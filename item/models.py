@@ -89,10 +89,17 @@ class Item(models.Model):
 
             setattr(item, name, value)
 
-        bonuses = [
-            ItemPassivity(passivity = Passivity.objects.get(id = bonus), item = item, number = number)
-            for number, bonus in enumerate(data["bonuses"])
-        ]
+
+        ItemPassivity.objects.filter(item = item).delete()
+
+        bonuses = []
+        for number, bonus in enumerate(data["bonuses"]):
+            bonus, created = ItemPassivity.objects.update_or_create(
+                item = item, number = number, 
+                defaults = {"passivity": Passivity.objects.get(id = bonus)}
+            )
+
+            bonuses += [bonus]
 
         item.save()
         for bonus in bonuses:

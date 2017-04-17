@@ -8,19 +8,22 @@ def dont_call(cls):
 @dont_call
 class ChoiceEnum(Enum):
     
+
     @classmethod
     def choices(cls):
         res = []
 
         for name, value in cls._member_map_.items():
-            name = name.capitalize().replace("_", " ")
-            res += [(value.value, name)]
+            res += [(value.value, value.display_name())]
 
         return tuple(res)
 
 
     def __call__(self):
         return self.value
+
+    def display_name(self):
+        return self.name.capitalize().replace("_", " ")
 
     @classmethod
     def all(cls):

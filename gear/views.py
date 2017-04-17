@@ -7,6 +7,7 @@ from django.template import loader
 
 from django.http import *
 from .models import *
+from .forms  import *
 from item.models import Item
 
 import json
@@ -33,9 +34,13 @@ def upload(request):
     )
 
     # if renamed
-    if player.name != data["playerName"]:
-        player.name = data["playerName"]
-        player.save()
+    player.name = data["playerName"]
+    player.klass = data["class"]
+    player.race = data["race"]
+    player.gender = data["gender"]
+    player.save()
+
+
 
 
     # TODO gearsets
@@ -57,33 +62,34 @@ def upload(request):
     return HttpResponse("OK")
 
 def player(request, id):
-    ...
+    return render(
+        request, 
+        "gear/player.html",
+        {
+            "player": get_object_or_404(Player, id=id)
+        }
+    )
 
+def search(request):
+    players = Player.objects.all()
 
-positions = {
-    Slot.WEAPON:       (69, 93),
-    Slot.ARMOR:        (338, 93),
-    Slot.BOOTS:        (69, 178),
-    Slot.GLOVES:       (338, 178),
-    Slot.NECKLACE:     (160, 80),
-    Slot.INNERWEAR:    (203, 151),
-    Slot.BELT:         (203, 224),
-    Slot.LEFT_RING:    (58, 263),
-    Slot.RIGHT_RING:   (349, 263),
-    Slot.LEFT_EARING:  (58, 9),
-    Slot.RIGHT_EARING: (349, 9),
-    Slot.BROOCH:       (247, 80),
-    Slot.CIRCLET:      (137, 9),
-}
+    players = players.filter(name__startswith = request.GET.get("player_name", ""))
 
-crystal_positions = {
-    Slot.WEAPON:        ((8, 72), (8, 118), (8, 164), (8, 210)),
-    Slot.ARMOR:         ((410, 72), (410, 118), (410, 164), (410, 210)),
-    Slot.RIGHT_EARING:  ((410, 8),),
-    Slot.LEFT_EARING:   ((8, 8),),
-    Slot.RIGHT_RING:    ((410, 274),),
-    Slot.LEFT_RING:     ((8, 274),),
-}
+    server = request.GET.get("server", "")
+    if server:
+        players = players.filter(server__name = server)
+
+    print(players)
+
+    return render(
+        request,
+        "gear/player_search.html",
+        {
+            "form": PlayerSearchForm(initial = request.GET),
+            "players": players
+        }
+    )
+
 
 def gear(request, id):
     return render (
@@ -91,8 +97,5 @@ def gear(request, id):
         "gear/gear.html",        
         {
             "gear": get_object_or_404(Gear, id=id),
-            "Slot": Slot,
-            "positions": positions,
-            "crystal_positions": crystal_positions
         }
     )
