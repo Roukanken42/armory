@@ -1,0 +1,23 @@
+{% load widget_tweaks %}
+
+
+<div class="container">    
+    <nav class="navbar navbar-default">
+        <form action="/search" class="nav navbar-form navbar-right">
+            <div class="input-group">
+                {% render_field form.player placeholder="Player" class+="form-control" %}
+                
+                <span class="input-group-btn">
+                    <span class="input-group">
+                        <span class="input-group-btn"> </span>
+                        <span class="input-group-addon" id="basic-addon1"> at </span>                        
+                        {% render_field form.server class+="selectpicker form-control" %}
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Search!</button>
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </form>
+    </nav>
+</div>
