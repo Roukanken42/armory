@@ -66,7 +66,8 @@ def player(request, id):
         request, 
         "gear/player.html",
         {
-            "player": get_object_or_404(Player, id=id)
+            "player": get_object_or_404(Player, id=id),
+            "form": PlayerSearchForm()
         }
     )
 

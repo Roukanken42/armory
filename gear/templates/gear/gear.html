@@ -2,7 +2,7 @@
 {% load armory %}
 
 <style>
-.tooltip .tooltip-content {
+.item-tooltip .item-tooltip-content {
     visibility: hidden;
     padding: 5px 0;
     border-radius: 6px;
@@ -19,7 +19,7 @@
     transition: opacity 0.5s;
 }
 
-.tooltip:hover .tooltip-content {
+.item-tooltip:hover .item-tooltip-content {
     visibility: visible;
     opacity: 1;
 }
@@ -32,10 +32,10 @@
         {% if item %}
             {% with gear.positions|getitem:slot as point %}
                 {% with 50 as size %}
-                    <div class="tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">
+                    <div class="item-tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">
                         {% include "item/icon.html" %}        
                     
-                        <div class="tooltip-content" style="z-index: 42;">
+                        <div class="item-tooltip-content" style="z-index: 42;">
                             {% include "item/tooltip.html" %}
                         </div> 
                     </div>
@@ -45,10 +45,10 @@
             {% with gear.crystal_positions|getitem:slot as pos %}
                 {% for item, point in item.crystals|zip:pos %}
                     {% with 39 as size %}
-                        <div class="tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">    
+                        <div class="item-tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">    
                             {% include "item/icon.html" %}
 
-                            <div class="tooltip-content" style="z-index: 42;">
+                            <div class="item-tooltip-content" style="z-index: 42;">
                                 {% with True as crystal %}
                                     {% include "item/tooltip.html" %}
                                 {% endwith %}

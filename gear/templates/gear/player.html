@@ -1,8 +1,12 @@
+{% include "common/headers.html" %}
+{% include "gear/navbar.html" %}
 
-{{ player.display.klass }} {{ player.name }} 
+<div class="container">
+    {{ player.display.klass }} {{ player.name }} 
 
-{% for gear in player.gearsets.all %}
-    {% include "gear/gear.html" %}
-    <div style="clear:both"></div>
-    <br>
-{% endfor %}
+    {% for gear in player.gearsets.all %}
+        {% include "gear/gear.html" %}
+        <div style="clear:both"></div>
+        <br>
+    {% endfor %}
+</div>
