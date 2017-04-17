@@ -73,7 +73,7 @@ def player(request, id):
 def search(request):
     players = Player.objects.all()
 
-    players = players.filter(name__startswith = request.GET.get("player_name", ""))
+    players = players.filter(name__startswith = request.GET.get("player", ""))
 
     server = request.GET.get("server", "")
     if server:

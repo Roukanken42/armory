@@ -1,25 +1,29 @@
-<form action="/search" mehtod="get">
-    {% for field in form %}
-        {{ field.label }}  {{ field }} 
-    {% endfor %}
-    <input type="submit" value="Search">
-</form>
+{% include "common/headers.html" %}
 
-<table style="width:50%; text-align: center">
-<tr> 
-<th> Name </th>
-<th> Server </th>
-<th> Class </th>
-<th> Gender </th>
-<th> Race </th>
-</tr>
-    {% for player in players %}
-        <tr>
-            <td> <a href={% url "player" player.id %}> {{ player.name }} </a></td> 
-            <td> {{ player.server.name }} </td> 
-            <td> {{ player.display.klass }} </td> 
-            <td> {{ player.display.gender }} </td> 
-            <td> {{ player.display.race }} </td> 
+{% include "gear/navbar.html" %}
+
+
+<div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading"> Search results </div>
+
+        <table class="table">
+        <tr> 
+        <th> Name </th>
+        <th> Server </th>
+        <th> Class </th>
+        <th> Gender </th>
+        <th> Race </th>
         </tr>
-    {% endfor %}
-</table>
+            {% for player in players %}
+                <tr>
+                    <td> <a href={% url "player" player.id %}> {{ player.name }} </a></td> 
+                    <td> {{ player.server.name }} </td> 
+                    <td> {{ player.display.klass }} </td> 
+                    <td> {{ player.display.gender }} </td> 
+                    <td> {{ player.display.race }} </td> 
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
