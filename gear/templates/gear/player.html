@@ -1,12 +1,35 @@
 {% include "common/headers.html" %}
 {% include "gear/navbar.html" %}
 
-<div class="container">
-    {{ player.display.klass }} {{ player.name }} 
+<style>
 
-    {% for gear in player.gearsets.all %}
-        {% include "gear/gear.html" %}
-        <div style="clear:both"></div>
-        <br>
-    {% endfor %}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin {
+    margin: 20px;
+}
+
+</style>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading"> 
+            <h3><b> Player: {{ player.name }} </b></h3>
+        </div>
+
+
+        <div class="row panel-body">
+            {% for gear in player.gearsets.all %}
+                <div class="col-md-6"> 
+                    <div class="centered margin">
+                        {% include "gear/gear.html" %}
+                    </div>
+                </div> 
+            {% endfor %}
+        </div>
+    </div>
 </div>

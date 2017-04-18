@@ -71,6 +71,15 @@ def player(request, id):
         }
     )
 
+def index(request):
+    return render(
+        request, 
+        "gear/index.html",
+        {
+            "form": PlayerSearchForm()
+        }
+    )
+
 def search(request):
     players = Player.objects.all()
 
