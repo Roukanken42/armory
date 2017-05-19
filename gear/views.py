@@ -38,9 +38,12 @@ def upload(request):
     player.klass = data["class"]
     player.race = data["race"]
     player.gender = data["gender"]
+
+    # check this
+    if player.race == Race.POPORI and player.gender == Gender.FEMALE:
+        player.race = Race.ELIN
+
     player.save()
-
-
 
 
     # TODO gearsets

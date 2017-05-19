@@ -28,6 +28,7 @@ class Race(ChoiceEnum):
     CASTANIC    = 3
     POPORI      = 4
     BARAKA      = 5
+    ELIN        = 6
 
 class Gender(ChoiceEnum):
     FEMALE  = 0
@@ -100,13 +101,13 @@ class Server(models.Model):
 
 
 class Player(models.Model):
-    pid     = models.IntegerField()
+    pid    = models.IntegerField()
     name   = models.CharField(max_length=30)
     server = models.ForeignKey(Server, models.CASCADE)
 
-    race   = models.IntegerField(choices =   Race.choices(), null=True)
-    gender = models.IntegerField(choices = Gender.choices(), null=True)
-    klass  = models.IntegerField(choices =  Klass.choices(), null=True)
+    race   = EnumField(Race, null=True)
+    gender = EnumField(Gender, null=True)
+    klass  = EnumField(Klass, null=True)
 
     gearsets = models.ManyToManyField(Gear)
 
@@ -130,6 +131,7 @@ class Player(models.Model):
 
         @property
         def gender(self):
+            print(self.parent.gender)
             return Gender(self.parent.gender).display_name()
 
         @property

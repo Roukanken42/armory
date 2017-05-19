@@ -5,10 +5,10 @@
     {% with "item/icon_grade_"|addstr:item.data.rarity|addstr:".png" as corner_img %}
     
     <div style="position: relative">
-        <img src="{% static item.data.icon %}" align="left" style = "position: relative; top: 0; left: 0; z-index: 10;" width={{size}} height={{size}}>
+        <img src="{% static item.data.icon %}" class="icon" align="left" style = "position: relative; top: 0; left: 0; z-index: 10;">
         {% if dont_show_rarity %}
         {% else %}
-            <img src="{% static corner_img %}" id="icon_grade" style="position: absolute; top: 0px; left: 0px; z-index: 12;" width="16" height="16">
+            <img src="{% static corner_img %}" class="icon_grade" style="position: absolute; top: 0px; left: 0px; z-index: 12;">
         {% endif %}
     </div>
 

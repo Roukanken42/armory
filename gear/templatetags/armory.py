@@ -24,4 +24,20 @@ def addstr(a, b):
         return None
 
 
+class OnceNode(template.Node):
+    def __init__(self, content):
+        self.content = content
 
+    def render(self, context):
+        if self not in context.render_context:
+            context.render_context[self] = True
+            return self.content.render(context)
+
+        return ""
+
+def once(parser, token):
+    content = parser.parse(('endonce',))
+    parser.delete_first_token()
+    return OnceNode(content)
+
+register.tag("once", once)

@@ -1,29 +1,41 @@
 {% load static %}
 {% load armory %}
 
+{# {% once %} #}
 <style>
-.item-tooltip .item-tooltip-content {
-    visibility: hidden;
-    padding: 5px 0;
-    border-radius: 6px;
+    .item-tooltip .item-tooltip-content {
+        visibility: hidden;
+        padding: 5px 0;
+        border-radius: 6px;
 
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    top: 70%;
-    left: 200%;
-    margin-left: -60px;
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        top: 70%;
+        left: 200%;
+        margin-left: -60px;
 
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 0.5s;
-}
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
 
-.item-tooltip:hover .item-tooltip-content {
-    visibility: visible;
-    opacity: 1;
-}
+    .item-tooltip:hover .item-tooltip-content {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .item-icon .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .crystal-icon .icon {
+        width: 39px;
+        height: 39px;
+    }
 </style>
+{# {% endonce %} #}
 
 <div style="position: relative;">
     <img src={% static "gear/profile.png" %} id="icon_grade" style="position: relative; top: 0px; left: 0px; z-index: 8;">
@@ -31,30 +43,31 @@
     {% for slot, item in gear.all %}
         {% if item %}
             {% with gear.positions|getitem:slot as point %}
-                {% with 50 as size %}
-                    <div class="item-tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">
+                {# {% with 50 as size %} #}
+                    <div class="item-tooltip item-icon" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">
                         {% include "item/icon.html" %}        
                     
                         <div class="item-tooltip-content" style="z-index: 42;">
                             {% include "item/tooltip.html" %}
                         </div> 
                     </div>
-                {% endwith %}
+                {# {% endwith %} #}
             {% endwith %}
 
             {% with gear.crystal_positions|getitem:slot as pos %}
                 {% for item, point in item.crystals|zip:pos %}
-                    {% with 39 as size %}
+                    {# {% with 39 as size %} #}
                         <div class="item-tooltip" style="position: absolute; left: {{ point.0 }}; top: {{ point.1 }};">    
-                            {% include "item/icon.html" %}
+                            <div class="crystal-icon"> {% include "item/icon.html" %}
 
-                            <div class="item-tooltip-content" style="z-index: 42;">
+                            <div class="item-tooltip-content item-icon" style="z-index: 42;">
                                 {% with True as crystal %}
                                     {% include "item/tooltip.html" %}
                                 {% endwith %}
                             </div> 
+                             </div>
                         </div>
-                    {% endwith %}
+                    {# {% endwith %} #}
                 {% endfor %}
             {% endwith %}
         {% endif %}

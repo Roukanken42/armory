@@ -42,7 +42,15 @@
 </style>
 
 <div id="item" class = "item_box" style="width:400px; z-index: 8;" >
-	<font size = 4 class = {{ "rarity_"|addstr:item.data.rarity }}> {{ item.data.name }} </font>
+	<font size = 4 class = {{ "rarity_"|addstr:item.data.rarity }}> 
+		{% if item.enchant %}
+			+{{ item.enchant }}
+		{% endif %}
+		{% if item.masterworked %} Masterworked {% endif %}
+		{% if item.awakened %} Awakened: {% endif %}
+
+		{{ item.data.name }} 
+	</font>
 
 	<br><br>
 	<table style="width:100%">
@@ -55,10 +63,29 @@
 			<td>
 				{% autoescape off %}
 				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ item.data.tooltip }} 
+				</font>
 				{% endautoescape %}
 				<br>
-				Attack: {{ item.data.equipment.attack }}
+
+				<font style="color:#3E7BE8; line-height:150%; font-size: 80%">
+					{% if item.data.equipment.attack %}
+						Attack: {{ item.data.equipment.attack }}
+						<br>
+					{% endif %}
+					{% if item.data.equipment.defence %}
+						Defence: {{ item.data.equipment.defence }}
+						<br>
+					{% endif %}
+					{% if item.data.equipment.impact %}
+						Impact: {{ item.data.equipment.impact }}
+						<br>
+					{% endif %}
+					{% if item.data.equipment.balance %}
+						Balance: {{ item.data.equipment.balance }}
+						<br>
+					{% endif %}
 				</font>
+
 				<br>
 				<font size = 2 style = "color: #AB181A; line-height: 150%;">
 					{% if not item.data.tradeable %}
