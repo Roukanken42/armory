@@ -39,6 +39,11 @@
 	color: #D98F05;
 }
 
+.small-crystal-icon .icon {
+    width: 20px;
+    height: 20px;
+}
+
 </style>
 
 <div id="item" class = "item_box" style="width:400px; z-index: 8;" >
@@ -51,8 +56,10 @@
 
 		{{ item.data.name }} 
 	</font>
+	<font size = 2>
 
 	<br><br>
+
 	<table style="width:100%">
 		<tr>
 			<td valign="top">
@@ -61,11 +68,6 @@
 				{% endwith %}
 			</td>
 			<td>
-				{% autoescape off %}
-				<font size = 2 style = "color: #BBBBBB; line-height: 150%;"> {{ item.data.tooltip }} 
-				</font>
-				{% endautoescape %}
-				<br>
 
 				<font style="color:#3E7BE8; line-height:150%; font-size: 80%">
 					{% if item.data.equipment.attack %}
@@ -86,7 +88,6 @@
 					{% endif %}
 				</font>
 
-				<br>
 				<font size = 2 style = "color: #AB181A; line-height: 150%;">
 					{% if not item.data.tradeable %}
 						Cannot trade.
@@ -101,6 +102,16 @@
 						No sale value.
 					{% endif %}		
 				</font>
+
+				{% if crystal %}
+					{% if item.data.tooltip %}
+						{% autoescape off %}
+						<font size=2 style = "color: #BBBBBB; line-height: 150%;"> 
+							{{ item.data.tooltip }}
+						</font>
+						{% endautoescape %} 
+					{% endif %}
+				{% endif %}
 			</td>
 		</tr>
 	</table>
@@ -109,31 +120,42 @@
 ID[{{ data.id }}]<br>
 
  -->
-	<hr class = "line">
 	{% for bonus in item.data.passivity.all %}
+		{% once %} <hr class = "line"> {% endonce %}
 		{{ bonus.tooltip }} <br>
 	{% endfor %}
-	
-	<hr class = "line">
 	
 	{% if crystal %}
 	{% else %}
 		{% for bonus in item.passivity.all %}
+		{% once %} <hr class = "line"> {% endonce %}
 			{{ bonus.tooltip }} <br>
 		{% endfor %}
 	{% endif %}
 
-	<hr class = "line">
-
+	<span class="small-crystal-icon">
 	{% for item in item.crystals %}
+		{% once %} <hr class = "line"> {% endonce %}
 		{% with True as dont_show_rarity %}
-			{% with 22 as size %}
-				{% include "item/icon.html" %}
-			{% endwith %}
+			{% include "item/icon.html" %}
 		{% endwith %}
 		<font size = 2 style = "color:#3E7BE8; line-height: 180%;"> {{ item.data.name }} <br></font>
 	{% endfor %}	
+	</span>
 
+	{% if crystal %}
+	{% else %}
+	{% if item.data.tooltip %}
+		<hr class = "line">
+
+		{% autoescape off %}
+		<font style = "color: #BBBBBB; line-height: 150%;"> 
+			{{ item.data.tooltip }}
+		</font>
+		{% endautoescape %} 
+	{% endif %}
+	{% endif %}
+	</font>
 </div>
 
 

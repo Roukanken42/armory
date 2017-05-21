@@ -1,5 +1,5 @@
 
-{% include "common/headers.html" %}
+{# {% include "common/headers.html" %} #}
 
 {% load armory %}
 
@@ -44,12 +44,6 @@
     content: "\f0dd";
 }
 
-
-.table td {
-    /*text-align: center;*/
-    vertical-align: middle;
-}
-
 .hidden {
     display: none;
 }
@@ -57,13 +51,11 @@
 </style>
 
 
-<div class="container" id="bootstrap-overrides">
-
 <div class="card card-nested">
 
 <div class="card-header">
 <ul class="nav nav-tabs card-header-tabs">
-{% for cat in player.getAchievements %}
+{% for cat in main %}
     <li class="nav-item"> 
         <a class="nav-link{% if forloop.first %} active{% endif %}" href="#{{cat.safe}}" data-toggle="tab"> 
             {{ cat }}</span>
@@ -75,8 +67,8 @@
 
 
 <div class="tab-content">
-{% for cat in player.getAchievements %}
-    <div class="tab-pane fade{% if forloop.first %} active in{% endif %} card borderless"  id="{{cat.safe}}">
+{% for cat in main %}
+    <div class="tab-pane fade{% if forloop.first %} active in show{% endif %} card borderless"  id="{{cat.safe}}">
     
     <div class="card-header"> 
         <ul class="nav nav-tabs card-header-tabs" role="tablist">
@@ -92,26 +84,31 @@
     
     <div class="tab-content">
     {% for sub in cat.subs %}
-        <div role="tabpanel" class="tab-pane fade{% if forloop.first %} active in{% endif %}" id="{{cat.safe}}-{{sub.safe}}" style="border-top-style: none;">
+        <div role="tabpanel" class="tab-pane fade{% if forloop.first %} active in show{% endif %}" id="{{cat.safe}}-{{sub.safe}}" style="border-top-style: none;">
         
         <table class="borderless table" data-search="true">
             <thead><tr>
                 <th class="sortable"> <span class="fa"> </span> Points     </th>
                 <th class="sortable"> <span class="fa"> </span> Achievement</th>
                 {# <th class="sortable"> <span class="fa"> </span> Description</th> #}
-                <th class="sortable"> <span class="fa"> </span> Completed  </th>
+                {% if comparison %}
+                    <th class="sortable"> <span class="fa"> </span> {{ player.name }}      </th>
+                    <th class="sortable"> <span class="fa"> </span> {{ playerOther.name}}  </th>
+                {% else %}
+                    <th class="sortable"> <span class="fa"> </span> Completed  </th>
+                {% endif %}
             </tr></thead>
 
             <tbody>
             {% for achievement in sub.achievements %}
                 {% if achievement.name %}
-                    <tr {% if achievement.completed %} class="table-success" {% endif %}>
-                        <td> {{ achievement.points }} </td>
+                    <tr {% if achievement.completed and not comparison %} class="table-success" {% endif %}>
+                        <td class="align-middle"> {{ achievement.points }} </td>
                         {# <td> {{ achievement.name }} </td> #}
                         {# <td> {{ achievement.description }} </td> #}
-                        <td> {{ achievement.name }}  <br>
+                        <td class="align-middle"> {{ achievement.name }}  <br>
                          <small class="text-muted"> <em>{{ achievement.description }}</em> </small></td>
-                        <td> 
+                        <td class="align-middle {% if comparison and achievement.completed %}table-success{% endif %}"> 
                         {% if achievement.completed %}
                             <span class="hidden"> 
                                 {{ achievement.completed|date:"Ymd H:i" }} 
@@ -119,6 +116,17 @@
                             {{ achievement.completed|date:"dS F Y H:i" }}
                         {% endif %}
                         </td>   
+
+                        {% if comparison %}
+                            <td class="align-middle {% if achievement.completedOther %}table-success{% endif %}"> 
+                            {% if achievement.completedOther %}
+                                <span class="hidden"> 
+                                    {{ achievement.completedOther|date:"Ymd H:i" }} 
+                                </span> 
+                                {{ achievement.completedOther|date:"dS F Y H:i" }}
+                            {% endif %}
+                            </td>   
+                        {% endif %}
                     </tr>
                 {% endif %}
             {% endfor %}
@@ -135,7 +143,6 @@
 
 </div>
 
-</div>
 
 <script>
 // install custom qaid sort routines
@@ -174,7 +181,12 @@ $(document).ready(function() {
         bPaginate: false, 
         bInfo: false, 
         bAutoWidth: false,
-        aoColumns: [null, null, {"sType": "mystring"}]
+        aoColumns: [
+            null, 
+            null, 
+            {"sType": "mystring"},
+            {% if comparison %} {"sType": "mystring"}, {% endif %}
+        ]
 
     });
     

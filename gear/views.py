@@ -81,12 +81,14 @@ def upload(request):
     return HttpResponse("OK")
 
 def player(request, id):
+    player = get_object_or_404(Player, id=id)
+
     return render(
         request, 
         "gear/player.html",
         {
-            "player": get_object_or_404(Player, id=id),
-            "form": PlayerSearchForm()
+            "player": player,
+            "main": player.getAchievements()
         }
     )
 
@@ -126,5 +128,29 @@ def gear(request, id):
         "gear/gear.html",        
         {
             "gear": get_object_or_404(Gear, id=id),
+        }
+    )
+
+def compare(request, p1=None, p2=None):
+    if p2 is None:
+        return render(
+            request,
+            "gear/compare_search.html",
+            {
+                "cplayer": get_object_or_404(Player, id=p1) if p1 is not None else None,
+                "players": Player.objects.all()
+            }
+        )
+
+    p1 = get_object_or_404(Player, id=p1)
+    p2 = get_object_or_404(Player, id=p2)
+
+    return render(
+        request,
+        "gear/compare.html",
+        {
+            "player": p1,
+            "playerOther": p2,
+            "comparison": p1.compareAchievements(p2)
         }
     )

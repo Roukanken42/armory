@@ -1,39 +1,62 @@
-{% include "common/headers.html" %}
-{% include "gear/navbar.html" %}
-
+{% extends "common/headers.html" %}
 {% load armory %}
+
+
+{% block content %}
+
+{# {% include "gear/navbar.html" %} #}
 
 <style>
 
-.centered {
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.margin {
-    margin: 20px;
+#override .card-floating {
+    float: center;
+    margin: 12px;
+    max-width: 500;
+    background-color: #222; 
+    border-color: #222;
 }
 
 </style>
 
-<div class="container">
-    <div class="card-deck">
-        <div class="panel-heading"> 
-            <h3><b> Player: {{ player.name }} </b></h3>
-        </div>
-
-
-        <div class="row panel-body">
-            {% for gear in player.gearsets.all %}
-                <div class="card"> 
-                    <div class="centered margin">
-                        {% include "gear/gear.html" %}
-                    </div>
-                </div> 
-            {% endfor %}
+<div class="card card-primary card-inverse margin">
+    <div class="card-block"> 
+        <div class="card-title centered"> 
+            <h1><b>Player: {{ player.name }}</b></h1>
         </div>
     </div>
-
-    {% include "achievement/achievement.html" %}
 </div>
+
+<div class="card margin">
+    <div class="card-block">
+        <h3> Gear loadout </h3>
+    </div>
+</div>
+
+<div class="card-deck margin">
+    {% for gear in player.gearsets.all %}
+        <div class="card-floating card"> 
+            <div class="center margin">
+                {% include "gear/gear.html" %}
+            </div>
+
+        </div> 
+    {% endfor %}
+</div>
+
+<div class="card margin">
+    <div class="card-block">
+        <h3> Achievements </h3>
+    </div>
+</div>
+
+<div class="margin">
+{% include "achievement/achievement.html" %}
+</div>
+
+{% endblock %}

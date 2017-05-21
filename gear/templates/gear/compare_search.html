@@ -18,20 +18,13 @@
     width: 100%;
 }
 
-.margin {
-    margin: 20px;
-}
-
-.centered{
-    text-align: center;
-}
 
 </style>
 
 <div class="card card-primary card-inverse margin">
     <div class="card-block"> 
         <div class="card-title centered"> 
-            <h1><b>Players</b></h1>
+            <h1><b>Comparison{% if cplayer %}: {{ cplayer.name }} {% endif %}</b></h1>
         </div>
     </div>
 </div>
@@ -50,7 +43,11 @@
     <tbody>
         {% for player in players %}
             <tr>
-                <td> <a href={% url "player" player.id %}> {{ player.name }} </a></td> 
+                {% if cplayer %}
+                    <td> <a href={% url "compare" cplayer.id player.id %}> {{ player.name }} </a></td> 
+                {% else %}
+                    <td> <a href={% url "compare" player.id %}> {{ player.name }} </a></td> 
+                {% endif %}
                 <td> {{ player.server.name }} </td> 
                 <td> {{ player.klass.display_name }} </td> 
                 <td> {{ player.gender.display_name }} </td> 

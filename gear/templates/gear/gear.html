@@ -1,7 +1,6 @@
 {% load static %}
 {% load armory %}
 
-{# {% once %} #}
 <style>
     .item-tooltip .item-tooltip-content {
         visibility: hidden;
@@ -35,10 +34,10 @@
         height: 39px;
     }
 </style>
-{# {% endonce %} #}
 
 <div style="position: relative;">
-    <img src={% static "gear/profile.png" %} id="icon_grade" style="position: relative; top: 0px; left: 0px; z-index: 8;">
+    <img src={% static "gear/profile.png" %} id="icon_grade" class="card-img-top" style="position: relative; top: 0px; left: 0px; z-index: 8;">
+
 
     {% for slot, item in gear.all %}
         {% if item %}
@@ -72,5 +71,7 @@
             {% endwith %}
         {% endif %}
     {% endfor %}
+
+
 </div>
 

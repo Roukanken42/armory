@@ -23,6 +23,6 @@ def achievement(request, id):
         request, 
         "achievement/achievement.html",
         {
-            "player": player,
+            "main": player.getAchievements(),
         }
     )

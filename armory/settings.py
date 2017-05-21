@@ -131,7 +131,7 @@ STATIC_URL  = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = [ 
-    ('node_modules', '/path/to/your/project/node_modules/'),
+    ('node_modules', os.path.join(BASE_DIR, 'node_modules')),
 ]
 
 STATICFILES_FINDERS = [

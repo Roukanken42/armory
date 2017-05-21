@@ -176,6 +176,22 @@ class Player(models.Model):
         return cats
 
 
+    def compareAchievements(self, other):
+        completed = {}
+
+        for ach in Achievement.objects.filter(player=other):
+            completed[ach.data.id] = ach.completed
+
+        comparison = self.getAchievements()
+
+        for cat in comparison:
+            for sub in cat.subs:
+                for ach in sub.achievements:
+                    if ach.id in completed:
+                        ach.completedOther = completed[ach.id]
+
+        return comparison
+
 
 
 

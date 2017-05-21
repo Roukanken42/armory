@@ -1,0 +1,43 @@
+{% extends "common/headers.html" %}
+{% load armory %}
+
+
+{% block content %}
+
+{# {% include "gear/navbar.html" %} #}
+
+<style>
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#override .card-floating {
+    float: center;
+    margin: 12px;
+    max-width: 500;
+    background-color: #222; 
+    border-color: #222;
+}
+
+</style>
+
+<div class="card card-primary card-inverse margin">
+    <div class="card-block"> 
+        <div class="card-title centered"> 
+            <h1><b>Comparison: {{ player.name }} vs {{ playerOther.name }} </b></h1>
+        </div>
+    </div>
+</div>
+
+<div class="margin">
+    {% with comparison as main %}
+        {% with True as comparison %}
+            {% include "achievement/achievement.html" %}
+        {% endwith %}
+    {% endwith %}
+</div>
+
+{% endblock %}

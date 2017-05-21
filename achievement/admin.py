@@ -5,9 +5,13 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Category)
-admin.site.register(Achievement)
 
+@admin.register(Achievement)
+class AchievementAdmin(admin.ModelAdmin):
+    search_fields = ["data__name", "player__name"]
+
+
+@admin.register(AchievementData)
 class AchievementDataAdmin(admin.ModelAdmin):
     search_fields = ["name"]
 
-admin.site.register(AchievementData, AchievementDataAdmin)

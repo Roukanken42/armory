@@ -1,9 +1,18 @@
-{% include "common/headers.html" %}
-{% include "gear/navbar.html" %}
+{% extends "common/headers.html" %}
+{# {% include "gear/navbar.html" %} #}
 
-<div class="container">
-    <div class="Jumbotron">
+{% block content %}
+
+<div class="card card-primary card-inverse margin">
+    <div class="card-block"> 
+        <div class="card-title centered"> 
+            <h1><b>Home</b></h1>
+        </div>
+    </div>
+</div>
+
+    <div class="Jumbotron margin">
         <h1> Welcome to TERA Armory !</h1>
         <p> Nothing here yet </p>
     </div>
-</div>
+{% endblock %}
