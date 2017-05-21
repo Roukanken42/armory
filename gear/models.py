@@ -3,6 +3,7 @@ from item.models import Item
 
 from common.utils import *
 from enum import Enum
+from achievement.models import *
 
 class Slot(ChoiceEnum):
     WEAPON = 1
@@ -49,6 +50,8 @@ class Klass(ChoiceEnum):
     NINJA       = 12
     VALKYRIE    = 13
 
+
+# This is a hack and I know it
 
 @make_model
 @add_enum_field(Slot, lambda enum: models.ForeignKey(Item, related_name=enum.name.lower(), null=True))
@@ -97,7 +100,7 @@ class Server(models.Model):
     region = models.CharField(max_length=2)
 
     def __str__(self):
-        return "<Server {0.name}: id={0.id}, region={0.region}>".format(self)
+        return self.name
 
 
 class Player(models.Model):
@@ -109,10 +112,11 @@ class Player(models.Model):
     gender = EnumField(Gender, null=True)
     klass  = EnumField(Klass, null=True)
 
-    gearsets = models.ManyToManyField(Gear)
+    gearsets     = models.ManyToManyField(Gear)
+    achievements = models.ManyToManyField(AchievementData, through=Achievement)
 
     def __str__(self):
-        return "<Player {0.name}: pid={0.pid}, server={0.server.name}>".format(self)
+        return self.name
 
 
     # make a custom field I guess later
@@ -141,3 +145,37 @@ class Player(models.Model):
     def __init__(self, *args, **kwargs):
         super(Player, self).__init__(*args, **kwargs)
         self.display = Player.Display(self)
+
+
+    def getAchievements(self):
+        completed = {}
+
+        for ach in Achievement.objects.filter(player=self):
+            completed[ach.data.id] = ach.completed
+
+        main = Category.objects.get(id=42)
+
+        cats = []
+
+        for cat in main.subcategories.all():
+            cat.subs = []
+
+            for sub in cat.subcategories.all():
+                sub.achievements = []
+
+                for ach in sub.achievementdata_set.all():
+                    if ach.id in completed:
+                        ach.completed = completed[ach.id]
+
+                    sub.achievements += [ach]
+
+                cat.subs += [sub]
+
+            cats += [cat]
+
+        return cats
+
+
+
+
+

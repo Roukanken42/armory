@@ -1,0 +1,305 @@
+[
+    {
+        "fields": {
+            "name": "Main"
+        },
+        "model": "achievement.Category",
+        "pk": 42
+    },
+    {
+        "fields": {
+            "name": "Progression",
+            "parent": 42
+        },
+        "model": "achievement.Category",
+        "pk": 100
+    },
+    {
+        "fields": {
+            "name": "Encounters and Exploration",
+            "parent": 42
+        },
+        "model": "achievement.Category",
+        "pk": 200
+    },
+    {
+        "fields": {
+            "name": "Tours of Duty",
+            "parent": 42
+        },
+        "model": "achievement.Category",
+        "pk": 300
+    },
+    {
+        "fields": {
+            "name": "Dungeons and BGs",
+            "parent": 42
+        },
+        "model": "achievement.Category",
+        "pk": 400
+    },
+    {
+        "fields": {
+            "name": "Extracurricular Activities",
+            "parent": 42
+        },
+        "model": "achievement.Category",
+        "pk": 500
+    },
+    {
+        "fields": {
+            "name": "Special",
+            "parent": 42
+        },
+        "model": "achievement.Category",
+        "pk": 600
+    },
+    {
+        "fields": {
+            "name": "Level",
+            "parent": 100
+        },
+        "model": "achievement.Category",
+        "pk": 101
+    },
+    {
+        "fields": {
+            "name": "Sundry",
+            "parent": 100
+        },
+        "model": "achievement.Category",
+        "pk": 102
+    },
+    {
+        "fields": {
+            "name": "Southern Arun",
+            "parent": 200
+        },
+        "model": "achievement.Category",
+        "pk": 201
+    },
+    {
+        "fields": {
+            "name": "Northern Arun",
+            "parent": 200
+        },
+        "model": "achievement.Category",
+        "pk": 204
+    },
+    {
+        "fields": {
+            "name": "Southern Shara",
+            "parent": 200
+        },
+        "model": "achievement.Category",
+        "pk": 202
+    },
+    {
+        "fields": {
+            "name": "Northern Shara",
+            "parent": 200
+        },
+        "model": "achievement.Category",
+        "pk": 203
+    },
+    {
+        "fields": {
+            "name": "Miscellaneous",
+            "parent": 200
+        },
+        "model": "achievement.Category",
+        "pk": 205
+    },
+    {
+        "fields": {
+            "name": "For the Federation",
+            "parent": 300
+        },
+        "model": "achievement.Category",
+        "pk": 301
+    },
+    {
+        "fields": {
+            "name": "Island of Dawn",
+            "parent": 300
+        },
+        "model": "achievement.Category",
+        "pk": 302
+    },
+    {
+        "fields": {
+            "name": "Southern Arun",
+            "parent": 300
+        },
+        "model": "achievement.Category",
+        "pk": 303
+    },
+    {
+        "fields": {
+            "name": "Northern Arun",
+            "parent": 300
+        },
+        "model": "achievement.Category",
+        "pk": 306
+    },
+    {
+        "fields": {
+            "name": "Southern Shara",
+            "parent": 300
+        },
+        "model": "achievement.Category",
+        "pk": 304
+    },
+    {
+        "fields": {
+            "name": "Northern Shara",
+            "parent": 300
+        },
+        "model": "achievement.Category",
+        "pk": 305
+    },
+    {
+        "fields": {
+            "name": "Southern Arun Dungeons",
+            "parent": 400
+        },
+        "model": "achievement.Category",
+        "pk": 401
+    },
+    {
+        "fields": {
+            "name": "Northern Arun Dungeons",
+            "parent": 400
+        },
+        "model": "achievement.Category",
+        "pk": 404
+    },
+    {
+        "fields": {
+            "name": "Southern Shara Dungeons",
+            "parent": 400
+        },
+        "model": "achievement.Category",
+        "pk": 402
+    },
+    {
+        "fields": {
+            "name": "Northern Shara Dungeons",
+            "parent": 400
+        },
+        "model": "achievement.Category",
+        "pk": 403
+    },
+    {
+        "fields": {
+            "name": "Corsairs' Stronghold",
+            "parent": 400
+        },
+        "model": "achievement.Category",
+        "pk": 405
+    },
+    {
+        "fields": {
+            "name": "Kumas Royale",
+            "parent": 400
+        },
+        "model": "achievement.Category",
+        "pk": 407
+    },
+    {
+        "fields": {
+            "name": "Enchanting",
+            "parent": 500
+        },
+        "model": "achievement.Category",
+        "pk": 501
+    },
+    {
+        "fields": {
+            "name": "Gathering",
+            "parent": 500
+        },
+        "model": "achievement.Category",
+        "pk": 502
+    },
+    {
+        "fields": {
+            "name": "Partying",
+            "parent": 500
+        },
+        "model": "achievement.Category",
+        "pk": 503
+    },
+    {
+        "fields": {
+            "name": "Items",
+            "parent": 500
+        },
+        "model": "achievement.Category",
+        "pk": 504
+    },
+    {
+        "fields": {
+            "name": "Prestige",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 601
+    },
+    {
+        "fields": {
+            "name": "Events",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 602
+    },
+    {
+        "fields": {
+            "name": "PvP and Duels",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 603
+    },
+    {
+        "fields": {
+            "name": "Crafting",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 604
+    },
+    {
+        "fields": {
+            "name": "Reputation",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 605
+    },
+    {
+        "fields": {
+            "name": "Community",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 606
+    },
+    {
+        "fields": {
+            "name": "Festivals",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 607
+    },
+    {
+        "fields": {
+            "name": "Legacy Achievements",
+            "parent": 600
+        },
+        "model": "achievement.Category",
+        "pk": 608
+    }
+]

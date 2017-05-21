@@ -25,7 +25,7 @@ SECRET_KEY = '@zq+f4kjxbb6901cr2+(ta!b33v!)v@tzb=#jx)*b^f3p(m!ht'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["95.102.140.192", "localhost"]
+ALLOWED_HOSTS = ["95.102.140.192", "localhost", "178.41.150.201"]
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'item',
     'gear',
     'common',
+    'achievement',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -128,4 +130,22 @@ USE_TZ = True
 STATIC_URL  = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATICFILES_DIRS = [ ]
+STATICFILES_DIRS = [ 
+    ('node_modules', '/path/to/your/project/node_modules/'),
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    # os.path.join(BASE_DIR, 'extra-styles/scss'),
+    os.path.join(BASE_DIR, 'node_modules'),
+]
+
+SASS_PROCESSOR_ENABLED = True
+SASS_PRECISION = 8
+SASS_OUTPUT_STYLE = 'compact'

@@ -53,6 +53,7 @@ def make_model(cls):
 
     return type(cls.__name__, (models.Model, ), data)
 
+
 class EnumField(models.Field):
     def __init__(self, enum, *args, **kwargs):
         self.enum = enum

@@ -9,6 +9,9 @@ from django.http import *
 from .models import *
 from .forms  import *
 from item.models import Item
+from achievement.models import Achievement
+
+from datetime import datetime
 
 import json
 
@@ -62,6 +65,19 @@ def upload(request):
         gear[slot] = item
 
     gear.save()
+
+    for ach in data["achievements"]:
+        id = int(ach["id"])
+        completed = datetime.fromtimestamp(int(ach["completed"]))
+
+        Achievement.objects.get_or_create(
+            player = player,
+            data   = get_object_or_404(AchievementData, id = id),
+            defaults = {
+                "completed": completed
+            }
+        )
+
     return HttpResponse("OK")
 
 def player(request, id):
