@@ -7,4 +7,5 @@ python manage.py loaddata fixtures/item
 python manage.py loaddata fixtures/itempassivity 
 python manage.py loaddata fixtures/gear
 python manage.py loaddata fixtures/player
+python manage.py loaddata fixtures/achievement
 
